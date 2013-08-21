@@ -10,7 +10,7 @@
 html, body {  }
 
 body {
-  background-color: #FFF;
+  background-color: #f2f2f2;
   font: 16px Arial, sans-serif;
   text-align: center;
 
@@ -54,9 +54,8 @@ ul.posts span {
 /*****************************************************************************/
 
 .site {
-  font-size: 115%;
-  text-align: justify;
-  width: 42em;
+  text-align: left;
+  width: 750px;
   margin: 3em auto 2em;
   line-height: 1.5em;
 }
@@ -163,13 +162,82 @@ ul.posts span {
   font-size: 0.8em;
 }
 
-
-.resume h2 { font-size:131%; }
-.resume h3 {
-  border-bottom:1px solid #f55825;
-  font-size:123.1%;
+.vcard .main,
+.vcard .adr{
+  display: block;
+  width: 49%;
+  margin: 0;
+  float: left;
 }
+
+.vcard{
+
+}
+
+.vcard .title{
+  font-weight: bold;
+}
+
+.vcard .adr{
+  float: right;
+}
+
+.resume blockquote{
+  font-family: Georgia, Serif;
+  font-style: italic;
+  color: #333;
+  background: #ddd;
+  margin: 10px 0;
+  padding: 5px 20px;
+  font-size: 1.1em;
+}
+
+.resume h1 { 
+  font-size:150%; 
+  border-bottom: 1px solid #ddd;
+}
+
+.resume h2 { 
+  font-size:131%;
+  font-style: italic;
+}
+
+.resume h3 { font-size:123.1%; }
 .resume h4 { font-size:116%; }
 .resume ul ul { list-style:none; }
 .resume ul ul li { list-style:none; }
 .resume ul ul li:before { content:"\2023 \0020"; }
+
+.resume dl{
+  margin: 0;
+  padding: 0;
+}
+
+.resume dt{
+  text-align: right;
+  padding: 0 26px 0 0;
+  width: 120px;
+  float: left;
+  margin: 10px 0 0;
+  clear: both;
+}
+.resume dd{
+  width: 570px;
+  float: right;
+  margin: 10px 0 0;
+  border-left: 1px solid #aaa; 
+  padding: 0 0 0 26px;
+}
+
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.clearfix:after {
+  clear: both;
+}
