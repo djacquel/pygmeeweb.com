@@ -5,25 +5,23 @@
 /*****************************************************************************/
 
 /* Global Reset */
-* {
-  margin: 0;
-  padding: 0;
-}
 
-html, body { height: 100%; }
+
+html, body {  }
 
 body {
   background-color: #FFF;
-  font: 13.34px Helvetica, Arial, sans-serif;
-  font-size: small;
+  font: 16px Arial, sans-serif;
   text-align: center;
+
+  margin: 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-size: 100%; }
+   }
 
-h1 { margin-bottom: 1em; }
-p { margin: 1em 0; }
+h1 {  }
+p {  }
 
 a         { color: #00a; }
 a:hover   { color: #000; }
@@ -158,3 +156,20 @@ ul.posts span {
 .post pre.terminal code {
   background-color: #333;
 }
+
+.warning{
+  background: MistyRose;
+  padding: 5px;
+  font-size: 0.8em;
+}
+
+
+.resume h2 { font-size:131%; }
+.resume h3 {
+  border-bottom:1px solid #f55825;
+  font-size:123.1%;
+}
+.resume h4 { font-size:116%; }
+.resume ul ul { list-style:none; }
+.resume ul ul li { list-style:none; }
+.resume ul ul li:before { content:"\2023 \0020"; }
