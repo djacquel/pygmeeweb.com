@@ -208,12 +208,12 @@ ul.posts span {
 .resume ul ul li { list-style:none; }
 .resume ul ul li:before { content:"\2023 \0020"; }
 
-.resume dl{
+dl{
   margin: 0;
   padding: 0;
 }
 
-.resume dt{
+dt{
   text-align: right;
   padding: 0 26px 0 0;
   width: 120px;
@@ -221,7 +221,7 @@ ul.posts span {
   margin: 10px 0 0;
   clear: both;
 }
-.resume dd{
+dd{
   width: 570px;
   float: right;
   margin: 10px 0 0;

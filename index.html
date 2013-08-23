@@ -4,10 +4,17 @@ title: Home
 ---
 
 <div id="home">
-  <h1>Blog Posts</h1>
-  <ul class="posts">
-    {% for post in site.posts %}
-      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+  <h1>Last Posts</h1>
+
+<dl class="clearfix">
+    {% for post in site.posts limit: site.recent_posts %}
+    <dt>{{ post.date | date: "%b %d, %Y" }}</dt>
+    <dd class="clearfix">
+        <a href="{{ root_url }}{{ post.url }}">{{ post.title }}</a>
+        {{ post.excerpt }}<a href="{{ post.url }}">Read</a>
+    </dd>
     {% endfor %}
-  </ul>
+</dl>
+
+
 </div>
