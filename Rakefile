@@ -9,7 +9,7 @@ SOURCE = "."
 CONFIG = {
   'layouts' => "_layouts",
   'posts' => "_posts",
-  'post_ext' => "html"
+  'post_ext' => "markdown"
 }
 
 # Usage: rake post title="A Title" [date="2012-02-09"] [tags=[tag1, tag2]]
@@ -29,7 +29,7 @@ task :post do
   if File.exist?(filename)
     abort("rake aborted!") if ask("#{filename} already exists. Do you want to overwrite?", ['y', 'n']) == 'n'
   end
-  
+
   puts "Creating new post: #{filename}"
   open(filename, 'w') do |post|
     post.puts "---"
@@ -38,6 +38,7 @@ task :post do
     post.puts 'description: ""'
     post.puts "category: "
     post.puts "tags: #{tags}"
+    post.puts "published: false"
     post.puts "---"
   end
 end # task :post
