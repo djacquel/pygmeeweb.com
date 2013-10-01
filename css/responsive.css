@@ -34,7 +34,7 @@
     clear: both;
   }
 
-  h2, p{
+  dd h2, dd p{
     display: inline;
   }
 }
