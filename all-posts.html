@@ -1,0 +1,20 @@
+---
+layout: default
+title: All posts
+---
+
+<div id="home">
+  <h1>All Posts</h1>
+
+<dl class="clearfix">
+    {% for post in site.posts %}
+    <dt>{{ post.date | date: "%b %d, %Y" }}</dt>
+    <dd class="clearfix">
+        <h2><a href="{{ root_url }}{{ post.url }}">{{ post.title }}</a></h2>
+        {{ post.excerpt }}
+    </dd>
+    {% endfor %}
+</dl>
+
+
+</div>

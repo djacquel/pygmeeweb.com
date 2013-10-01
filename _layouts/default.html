@@ -11,33 +11,30 @@
   <body>
     <div class="container">
       <div class="site">
-        <div class="header">
+        <div class="header clearfix">
+          <a href="/" class="logoLink">
+            <img src="{{ root_url }}/img/logo-pygmeeweb.png" alt="Pygmeeweb logo">
+          </a>
           <h1 class="title"><a href="/">{{ site.name }}</a></h1>
-          <a class="extra" href="/">home</a>
+
+          <div class="menu">
+            <a href="{{ root_url }}/">home</a> |
+            <a href="{{ root_url }}/all-posts.html">All posts</a>
+          </div>
+
+          <ul class="social">
+            <li><a class="github" href="http://github.com/djacquel/" target="_blank">see my code on Github</a></li>
+            <li><a class="twitter" href="http://twitter.com/djacquel/" target="_blank">ping me on Twitter</a></li>
+            <li><a class="stackoverflow" href="http://stackoverflow.com/users/1548376/david-jacquel" target="_blank">see my  profile on stackoverflow</a></li>
+          </ul>
+
         </div>
             {{ content }}
         <div class="footer">
-          <div class="contact">
-            <p>
-              David jacquel<br />
-              Senior web developer<br />
-              dj-AT-pygmeeweb-DOT-com
-            </p>
-          </div>
-          <div class="contact">
-            <p>
-              <a href="http://github.com/djacquel/">github</a><br />
-              <a href="http://twitter.com/djacquel/">twitter</a><br />
-              <a href="http://stackoverflow.com/users/1548376/david-jacquel">stackoverflow</a>
-            </p>
-          </div>
-          <div class="contact">
-            <p>
-              <a href="/cv-david-jacquel-freelance-senior-web-developer.html">Resume</a>
-            </p>
-          </div>
+          <p>
+            <a href="/cv-david-jacquel-freelance-senior-web-developer.html">David jacquel - Senior web developer - my resume</a>
+          </p>
         </div>
-        <div class="warning">This site is a work in progress. Things can appear or disappear, sometimes.</div>
       </div>
     </div>
     <script type="text/javascript">

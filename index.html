@@ -4,17 +4,21 @@ title: Home
 ---
 
 <div id="home">
-  <h1>Last Posts</h1>
+    <div class="intro">
+        <p>This is my reminder blog. I write things down in one place this is good for documentation training.<br>
+        Comments are not yet enabled, so fill free to ping me on <a href="http://twitter.com/djacquel/">twitter</a>.</p>
+    </div>
 
-<dl class="clearfix">
-    {% for post in site.posts limit: site.recent_posts %}
-    <dt>{{ post.date | date: "%b %d, %Y" }}</dt>
-    <dd class="clearfix">
-        <a href="{{ root_url }}{{ post.url }}">{{ post.title }}</a>
-        {{ post.excerpt }}<a href="{{ post.url }}">Read</a>
-    </dd>
-    {% endfor %}
-</dl>
+    <h1>Last Posts</h1>
 
-
+    <dl class="clearfix">
+        {% for post in site.posts limit: site.recent_posts %}
+        <dt>{{ post.date | date: "%b %d, %Y" }}</dt>
+        <dd class="clearfix">
+            <h2><a href="{{ root_url }}{{ post.url }}">{{ post.title }}</a></h2>
+            {{ post.excerpt }}
+        </dd>
+        {% endfor %}
+    </dl>
+    <a class="allpost" href="{{ root_url }}/all-posts.html">View all posts</a>
 </div>
