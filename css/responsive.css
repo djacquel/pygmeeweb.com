@@ -1,0 +1,71 @@
+
+@media screen and (max-width: 700px){
+
+.container{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+  .site {
+    width: 97%;
+    margin: 10px;
+  }
+
+  dt{
+    width: auto;
+    float: left;
+  }
+  dd{
+    width: auto;
+    border: none;
+    margin: 0;
+    padding: 0;
+    float: left;
+    clear: both;
+  }
+
+  dd h2{
+    float: left;
+    clear: both;
+  }
+  dd p{
+    float: left;
+    clear: both;
+  }
+
+  h2, p{
+    display: inline;
+  }
+}
+
+@media screen and (max-width: 500px){
+
+    .logoLink{
+        display: none;
+        visibility: hidden;
+    }
+
+    .site .header h1.title{
+        margin: 0;
+    }
+
+    .site .menu a{
+        float: left;
+        clear: both;
+    }
+
+    .site .menu span{
+        display: none;
+    }
+
+    .site .social{
+        float: left;
+        margin: -20px 0 0;
+        padding: 0;
+    }
+
+    .site .intro {
+        margin: 10px 0 0;
+    }
+}
