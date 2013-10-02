@@ -5,6 +5,12 @@ relative_permalinks: false
 
 recent_posts: 5      # Posts on home page
 
-url: http://pygmeeweb.com
+exclude:
+  - README.md
+  - CNAME
+  - Gemfile
+  - Gemfile.lock
+  - Rakefile
 
+url: http://pygmeeweb.com
 disqus_shortname: pygmeeweb
