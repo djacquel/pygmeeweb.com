@@ -249,11 +249,16 @@ a.logoLink:hover{
   white-space: normal;
 }
 
-.resume h3 { font-size:123.1%; }
-.resume h4 { font-size:116%; }
+.resume h3 { font-size:123.1%; margin: 10px 0 5px; }
 
-.resume ul{ padding: 0; }
+.resume h4 { font-size:100%; margin: 5px 0 0; }
+.resume h4+p { margin: 0; }
+
+.resume ul{ padding: 0 0 0 10px; margin-top: 0;}
+
 .resume ul ul{ padding: 0 0 0 1em; }
+
+.resume strong{ margin-top: 5px; }
 
 dl{
   margin: 0;
@@ -265,7 +270,7 @@ dt{
   padding: 0 6px 0 0;
   width: 130px;
   float: left;
-  margin: 10px 0 0;
+  margin: 0;
   clear: both;
   white-space: nowrap;
 }
