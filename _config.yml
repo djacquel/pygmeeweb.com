@@ -7,7 +7,6 @@ recent_posts: 5      # Posts on home page
 
 exclude:
   - README.md
-  - CNAME
   - Gemfile
   - Gemfile.lock
   - Rakefile
