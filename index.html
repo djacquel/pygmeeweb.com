@@ -2,7 +2,6 @@
 layout: default
 title: Home
 ---
-
 <div id="home">
     <div class="intro">
         <p>This is my reminder blog. I write things down in one place this is good for documentation training.<br>
@@ -10,15 +9,12 @@ title: Home
     </div>
 
     <h1>Last Posts</h1>
-
-    <dl class="clearfix">
-        {% for post in site.posts limit: site.recent_posts %}
-        <dt>{{ post.date | date: "%b %d, %Y" }}</dt>
+    <dl class="clearfix">{% for post in site.posts limit: site.recent_posts %}
+        <dt>{% include _myDate.html param=post.date %}</dt>
         <dd class="clearfix">
             <h2><a href="{{ root_url }}{{ post.url }}">{{ post.title }}</a></h2>
             {{ post.excerpt }}
         </dd>
-        {% endfor %}
-    </dl>
+    {% endfor %}</dl>
     <a class="allpost" href="{{ root_url }}/all-posts.html">View all posts</a>
 </div>

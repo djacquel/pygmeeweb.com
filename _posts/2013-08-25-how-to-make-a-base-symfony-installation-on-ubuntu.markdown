@@ -1,10 +1,7 @@
 ---
 layout: post
 title: "How to make a base Symfony installation on Ubuntu"
-description: ""
-category:
-tags: []
-published: true
+comments: true
 ---
 
 A quick Symfony installation on Ubuntu.

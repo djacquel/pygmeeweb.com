@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Playing with github pages on Ubuntu 12.04"
-date:   2013-09-20 21:19:59
+comments: true
 ---
 
 I've just reinstalled my Ubuntu so also I need to reinstall [Github pages][ghpages]. Let's go !

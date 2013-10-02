@@ -18,7 +18,7 @@ I try to document things as much has I can, that means not all the time ;-).
 
    - be fast on both server and client side,
    - be accessible and usable,
-   - be a testbed my UX pattern and frameworks testings,
+   - be a testbed for my UX pattern and frameworks testings,
    - host my resume,
    - ...
 

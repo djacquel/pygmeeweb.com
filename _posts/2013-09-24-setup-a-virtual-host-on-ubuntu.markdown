@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Setup a virtual host on Ubuntu"
-published: true
+comments: true
 ---
 
 Basic commands to setup a virtual host on Ubuntu Linux

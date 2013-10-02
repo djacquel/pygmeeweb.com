@@ -1,0 +1,18 @@
+{% comment %}
+    @param date include.param
+
+    returns a date formatted like this :
+    Jan 1st, this year
+    Jan 2nd, last year
+    Jan 3rd, 2010
+    Jan 4th, 2009
+
+    Sorry to strip whitespaces but Liquid don't do that for now,
+    so it renders templates full of \n and spaces
+
+{% endcomment %}
+{% assign d = include.param | date: "%-d" %}{% assign todayDateYear = 'now' | date: "%Y" %}{% assign postDateYear = include.param | date:"%Y" %}{% assign yearDiff = todayDateYear | minus: postDateYear %}
+{% capture dayOrdinalize %}{% case d %}{% when "1" or "21" or "31" %}st{% when "2" or "22" %}nd{% when "3" or "23" %}rd{% else %}th{% endcase %}{% endcapture %}
+{% capture yearExpression %}{% case yearDiff %}{% when 0 %}this year{% when 1 %}last year{% else %}{{postDateYear}}{% endcase %}{% endcapture %}
+{% capture fullDate %}{{ include.param | date: "%b" }} {{ d }}<sup>{{ dayOrdinalize}}</sup>, {{ yearExpression}}{% endcapture %}
+{{ fullDate | strip_newlines}}

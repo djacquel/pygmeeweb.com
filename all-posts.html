@@ -8,7 +8,7 @@ title: All posts
 
 <dl class="clearfix">
     {% for post in site.posts %}
-    <dt>{{ post.date | date: "%b %d, %Y" }}</dt>
+    <dt>{% include _myDate.html param=post.date %}</dt>
     <dd class="clearfix">
         <h2><a href="{{ root_url }}{{ post.url }}">{{ post.title }}</a></h2>
         {{ post.excerpt }}
