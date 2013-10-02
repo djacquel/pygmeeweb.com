@@ -3,7 +3,8 @@ markdown: redcarpet
 pygments: true
 relative_permalinks: false
 
-excerpt_separator: "\n\n"
-
 recent_posts: 5      # Posts on home page
 
+url: http://pygmeeweb.com
+
+disqus_shortname: pygmeeweb

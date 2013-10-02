@@ -21,6 +21,7 @@ rake post title="Post's title here" tags="tagOne tagTwo" date="2012-12-31"
 jekyll build --drafts
 jekyll build --watch
 jekyll build --source _source --destination _deploy
+jekyll build --config _config.yml, config-dev.yml
 {% endhighlight %}
 
 [Jekyll]:    http://jekyllrb.com

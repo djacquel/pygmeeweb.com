@@ -9,6 +9,10 @@ layout: default
     {{ content }}
 </div>
 {% if page.comments %}
+<script>
+    var disqus_shortname = '{{site.disqus_shortname}}';
+    var disqus_identifier = '{{ page.url }}';
+</script>
 <hr>
 <div class="postComments">
     <h2>Comments</h2>

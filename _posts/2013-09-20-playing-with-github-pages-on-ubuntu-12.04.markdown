@@ -54,7 +54,7 @@ As this default site already contains a post you can already _build_ your static
 jekyll build
 {% endhighlight %}
 
-This will create a __site_ folder containing all necessary files for your site.
+This will create a __site__ folder containing all necessary files for your site.
 
 You can now point a virtual hosts to *whereourfileslives/_site* and see the magic.
 
