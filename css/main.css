@@ -5,8 +5,6 @@
 /*****************************************************************************/
 
 /* Global Reset */
-
-
 html, body {  }
 
 body {
@@ -14,7 +12,6 @@ body {
   background-color: #f2f2f2;
   font: 16px Arial, sans-serif;
   text-align: center;
-
   margin: 0;
 }
 
@@ -249,10 +246,14 @@ a.logoLink:hover{
 .resume h2 {
   font-size:131%;
   font-style: italic;
+  white-space: normal;
 }
 
 .resume h3 { font-size:123.1%; }
 .resume h4 { font-size:116%; }
+
+.resume ul{ padding: 0; }
+.resume ul ul{ padding: 0 0 0 1em; }
 
 dl{
   margin: 0;

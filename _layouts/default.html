@@ -8,11 +8,12 @@
       <link rel="stylesheet" href="/css/syntax.css">
       <link rel="stylesheet" href="/css/main.css">
       <link rel="stylesheet" href="/css/responsive.css">
+      <link rel="stylesheet" href="/css/print.css">
   </head>
   <body>
     <div class="container">
       <div class="site">
-        <div class="header clearfix">
+        <div class="header clearfix no-print">
           <a href="/" class="logoLink">
             <img src="{{ root_url }}/img/logo-pygmeeweb.png" alt="Pygmeeweb logo">
           </a>
@@ -31,7 +32,7 @@
 
         </div>
             {{ content }}
-        <div class="footer">
+        <div class="footer no-print">
           <p>
               <a href="{{ root_url }}/">home</a><span> | </span>
               <a href="{{ root_url }}/all-posts.html">all&nbsp;posts</a>
@@ -43,29 +44,6 @@
         </div>
       </div>
     </div>
-    <script type="text/javascript">
-
-  // GOOGLE ANALYTICS CODE
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-157621-1']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
-  })();
-
-  // DISQUS CODE
-  if (typeof disqus_shortname != 'undefined'){
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function() {
-      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-  }
-
-    </script>
+{% include _javascript.html %}
   </body>
 </html>
