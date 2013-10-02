@@ -253,9 +253,6 @@ a.logoLink:hover{
 
 .resume h3 { font-size:123.1%; }
 .resume h4 { font-size:116%; }
-.resume ul ul { list-style:none; }
-.resume ul ul li { list-style:none; }
-.resume ul ul li:before { content:"\2023 \0020"; }
 
 dl{
   margin: 0;
