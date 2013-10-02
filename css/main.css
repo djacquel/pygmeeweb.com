@@ -213,10 +213,7 @@ a.logoLink:hover{
   font-size: 0.8em;
 }
 
-.vcard .main,
-.vcard .adr{
-  display: block;
-  width: 49%;
+.vcard .main{
   margin: 0;
   float: left;
 }
