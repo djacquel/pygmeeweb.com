@@ -306,3 +306,16 @@ dd p{
 .clearfix:after {
   clear: both;
 }
+
+
+
+
+a.externalLink{
+  background: url(../img/external-link-10.png) center right no-repeat;
+  padding-right: 13px;
+}
+
+a.externalLink:hover{
+  background: #000 url(../img/external-link-10-green.png) center right no-repeat;
+}
+
