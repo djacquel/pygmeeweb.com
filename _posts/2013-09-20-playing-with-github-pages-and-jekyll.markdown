@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Playing with github pages on Ubuntu 12.04"
+title:  "Playing with github pages and Jekyll"
 comments: true
 ---
 

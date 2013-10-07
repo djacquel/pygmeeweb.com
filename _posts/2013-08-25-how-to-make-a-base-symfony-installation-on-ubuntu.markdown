@@ -10,10 +10,11 @@ Versions used : Ubuntu 12.04 LTS, Symfony 2.3.5
 
 ## Pre-requisites
 
-  - have a base knowledge of Symfony 2 ([see the doc][Symfony2 doc])
-  - have a Linux box (preferred) with apache, php and git
-  - have composer installed globally (see [Composer doc][composer install globally])
-  - have a virtual host setup (see [my article on how to setup a virtual hosts on ubuntu][vhosts doc]). NB: the host must point to the /web folder of your Symfony install.
+  - base knowledge of Symfony 2 ([see the doc][Symfony2 doc]),
+  - a Linux box (preferred) with apache, php and git,
+  - composer installed globally (see [Composer doc][composer install globally]),
+  - a virtual host setup (see [my article on how to setup a virtual hosts on ubuntu][vhosts doc]). NB: the host must point to the /web folder of your Symfony install,
+  - if you want to do some clever git version : [gitflow](https://github.com/nvie/gitflow "gitflow repository on github") installed
 
 ## Let's go for the base install
 

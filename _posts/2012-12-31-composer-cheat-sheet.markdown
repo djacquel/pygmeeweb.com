@@ -6,7 +6,9 @@ published: true
 
 Usefull commands for composer
 
+## WORK IN PROGRESS
 [Composer documentation](http://getcomposer.org/doc/)
+[Packages for composer : Packagist.org](https://packagist.org/)
 
 ## Install globally on *nix
 
@@ -25,7 +27,9 @@ You can now invoke _**composer**_ from anywhere.
 **-v** verbose | **-h** help | **-q** no output | **-n** no interaction
 **--profile** timing and memory usage | **-V** version
 
-| Command        | Comments           |
+## Commands
+
+| Command        | Wat!           |
 | ------------- |-------------|
 | composer | list available commands |
 | composer init -h      | print help on init command |
@@ -34,5 +38,12 @@ You can now invoke _**composer**_ from anywhere.
 | composer require | add requirement to composer.json |
 | composer require --no-update | Disables the automatic update of the dependencies |
 
+## version
 
-<a href="http://example.com/" target="_blank">Hello, world!</a>
+| version | span |
+| --- | --- |
+| 1.0.2 | 1.0.2 |
+| >, >=, <, <=, != | >1.0 // multi >=1.0,<2.0 |
+| 1.0.* | >=1.0,<1.1 |
+| ~1.2 |>=1.2,<2.0 |
+| ~1.2.3 | >=1.2.3,<1.3 |

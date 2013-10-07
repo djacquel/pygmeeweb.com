@@ -319,3 +319,44 @@ a.externalLink:hover{
   background: #000 url(../img/external-link-10-green.png) center right no-repeat;
 }
 
+
+/* ------------ tables
+ styles from https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#wiki-tables
+*/
+
+table {
+  width: 100%;
+  overflow: auto;
+  display: block;
+  border-collapse: collapse;
+  border-spacing: 0;
+  border-color: red;
+}
+
+thead {
+  display: table-header-group;
+  vertical-align: middle;
+  border-color: inherit;
+  background: rgb(248, 234, 234);
+}
+
+
+tr {
+  border-top: 1px solid #ccc;
+  display: table-row;
+  vertical-align: inherit;
+  border-color: inherit;
+}
+
+th, td {
+border: 1px solid #ddd;
+padding: 6px 13px;
+}
+
+th {
+font-weight: bold;
+}
+
+tr:nth-child(even) {
+  background-color: #f8f8f8;
+}
