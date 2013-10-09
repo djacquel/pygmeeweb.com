@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Build CMS Application with Symfony - Day 00"
+comments: true
 ---
 
 The long awaited Suite : Building a simple CMS with Symfony.

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Composer cheat sheet"
-published: true
+comments: false
 ---
 
 Usefull commands for composer

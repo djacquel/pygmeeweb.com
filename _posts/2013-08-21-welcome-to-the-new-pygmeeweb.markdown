@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Welcome to the new Pygmeeweb !"
-comments: true
+comments: false
 ---
 
 Hello World !
