@@ -1,24 +1,26 @@
 ---
 layout: post
-title: "How to make a base Symfony installation on Ubuntu"
+title: "Symfony CMS - day 01 - Symfony installation"
 comments: true
 ---
 
-A quick Symfony installation on Ubuntu.
+A quick Symfony base installation.
 
-Versions used : Ubuntu 12.04 LTS, Symfony 2.3.5
+
+First day of our [Build CMS Application with Symfony]({% post_url 2013-09-23-cms-day00 %}) articles suite.
 
 ## Pre-requisites
 
   - base knowledge of Symfony 2 ([see the doc][Symfony2 doc]),
-  - a Linux box (preferred) with apache, php and git,
   - composer installed globally (see [Composer doc][composer install globally]),
-  - a virtual host setup (see [my article on how to setup a virtual hosts on ubuntu][vhosts doc]). NB: the host must point to the /web folder of your Symfony install,
+  - a virtual host setup (see [Setup a virtual host on Ubuntu]({% post_url 2013-08-24-setup-a-virtual-host-on-ubuntu %})). NB: the host must point to the /web folder of your Symfony install,
   - if you want to do some clever git version : [gitflow](https://github.com/nvie/gitflow "gitflow repository on github") installed
 
 ## Let's go for the base install
 
 Verify the last version of Symfony on the [Download page][Symfony download]
+
+Create a [page.dev virtual hosts]({% post_url 2013-08-24-setup-a-virtual-host-on-ubuntu %})
 
 {% highlight bash %}
 cd /home/www/page.dev
@@ -53,7 +55,7 @@ app/check.php
 Then make appropriates change to your /etc/php5/cli/php.ini file.
 
 If you want to upgrade your php to a newest version you can read my
-[Install PHP 5-5-4 on Ubuntu 12-04]({% post_url 2013-09-29-install-php-5-4-4-on-ubuntu-12-04 %}).
+[Install PHP 5-5-4 on Ubuntu 12-04]({% post_url 2013-08-29-install-php-5-4-4-on-ubuntu-12-04 %}).
 
 One more
 {% highlight bash %}
@@ -112,6 +114,12 @@ doctrine:
 app/console doctrine:database:create
 {% endhighlight %}
 
+Create the app/data folder for your sqlite db, set the right permissions and create your database.
+{% highlight bash %}
+app/console doctrine:database:create
+app/console doctrine:schema:update --force
+{% endhighlight %}
+
 ## Hacking composer.json
 
 Two little things about composer and __composer update__ :
@@ -137,7 +145,7 @@ Add two lines in composer.json
     [...]
 {% endhighlight %}
 
-## Version our code
+## Version the code
 
 Yes we are supposed to work with versioning even when working alone.
 I personally work with [git-flow](https://github.com/nvie/gitflow) but it's another story.
@@ -148,11 +156,10 @@ git add .
 git commit -m "Symfony initial install"
 {% endhighlight %}
 
-Et voilà !
+Et voilà ! Next step will be to install [Behavior Driven Development tools]({% post_url 2013-09-26-cms-day02-behavior-driven-development-with-behat-and-mink %})
 
 
 [Symfony2 doc]: http://symfony.com/doc/current/index.html
 [composer install globally]: http://getcomposer.org/doc/00-intro.md#globally
-[vhosts doc]: {% post_url 2013-09-24-setup-a-virtual-host-on-ubuntu %}
 [Symfony download]: http://symfony.com/download
 [file perms]: http://symfony.com/doc/current/book/installation.html#configuration-and-setup

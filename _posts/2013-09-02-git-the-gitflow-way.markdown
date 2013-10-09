@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "git, the gitflow way"
+title: "Git, the gitflow way"
 comments: true
 ---
 

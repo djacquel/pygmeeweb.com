@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Playing with github pages and Jekyll"
+title:  "Playing with Github pages and Jekyll"
 comments: true
 ---
 

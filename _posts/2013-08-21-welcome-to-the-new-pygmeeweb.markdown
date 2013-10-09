@@ -5,8 +5,7 @@ comments: true
 ---
 
 Hello World !
-I'm switching from [Diem / Symfony 1.x][diem] blog to a [Jekyll docs][jekyll] [Github pages][ghpages] powered blog.
-
+I'm switching from [Diem / Symfony 1.x][diem] blog to a [Jekyll][jekyll]+[Github pages][ghpages] powered blog.
 
 And that's why :
 

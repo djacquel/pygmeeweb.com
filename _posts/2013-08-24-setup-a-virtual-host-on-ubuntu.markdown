@@ -4,7 +4,7 @@ title: "Setup a virtual host on Ubuntu"
 comments: true
 ---
 
-Basic commands to setup a virtual host on Ubuntu Linux
+Basic commands to setup a virtual host on Ubuntu 12.04
 
 {% highlight bash %}
 sudo gedit /etc/hosts
