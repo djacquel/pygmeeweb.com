@@ -170,9 +170,10 @@ a.logoLink:hover{
 /* standard */
 .post pre {
   border: 1px solid #ddd;
-  background-color: #eef;
+  background-color: #000;
   padding: 0 .4em;
   overflow: auto;
+  color: white;
 }
 
 .post ul, .post ol {
@@ -181,7 +182,7 @@ a.logoLink:hover{
 
 .post code {
   border: 1px solid #ddd;
-  background-color: #eef;
+  background-color: #000;
   padding: 0 .2em;
 }
 
@@ -192,12 +193,12 @@ a.logoLink:hover{
 /* terminal */
 .post pre.terminal {
   border: 1px solid #000;
-  background-color: #333;
+  background-color: #000;
   color: #FFF;
 }
 
 .post pre.terminal code {
-  background-color: #333;
+  background-color: #000;
 }
 
 .post a{

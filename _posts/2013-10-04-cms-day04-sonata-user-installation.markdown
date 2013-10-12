@@ -13,7 +13,65 @@ Previous article [Sonata Admin Installation]({% post_url 2013-10-03-cms-day03-so
 
 In order to manage user and efficiently secure our application, we will use [FOS User Bundle](https://github.com/FriendsOfSymfony/FOSUserBundle) and [Sonata User Bundle](http://www.sonata-project.org/bundles/user/master/doc/index.html).
 
-## Install
+## Writing tests
+
+As we [have Behat installed]({% post_url 2013-09-26-cms-day02-behavior-driven-development-with-behat-and-mink %}), we can write tests for Sonata User install.
+
+{% highlight bash %}
+touch src/My/BDDBundle/Features/03-sonata-user-install.feature
+{% endhighlight %}
+
+{% highlight yaml %}
+@sonataUser
+Feature: sonata user installation
+  In order to protect admin
+  As a smart developer
+  I need to force users to login before seeing admin
+
+  Scenario: Forcing login before seeing admin page
+    Given I am not logged
+    And I go to "/admin/dashboard"
+    Then the response status code should be 200
+    And the url should match "/login"
+{% endhighlight %}
+
+The result of a **bin/behat --tags="sonataUser"** command will be :
+
+{% highlight bash %}
+[...]
+You can implement step definitions for undefined steps with these snippets:
+
+    /**
+     * @Given /^I am not logged$/
+     */
+    public function iAmNotLogged()
+    {
+        throw new PendingException();
+    }
+{% endhighlight %}
+
+Let's implement our first step in **src/My/BDDBundle/Features/Context/FeatureContext.php**.
+
+{% highlight php %}
+// src/My/BDDBundle/Features/Context/FeatureContext.php
+    /**
+     * @Given /^I am not logged$/
+     */
+    public function iAmNotLogged()
+    {
+        $this->visit('/logout');
+    }
+{% endhighlight %}
+
+ReRun a :
+
+{% highlight bash %}
+bin/behat --tags="sonataUser"
+{% endhighlight %}
+
+Cool ! Behat understand our feature ! But the test fails ! That's good.
+
+## Install Sonata User Bundle
 
 In your *composer.json* file, add :
 
@@ -51,6 +109,24 @@ public function registerBundles()
 
 {% highlight yaml %}
 # app/config/config.yml
+[...]
+doctrine:
+    dbal:
+        [... database connexion setup ]
+        types:
+            json: Sonata\Doctrine\Types\JsonType
+
+    orm:
+        auto_generate_proxy_classes: %kernel.debug%
+
+        entity_managers:
+            default:
+                mappings:
+                    ApplicationSonataUserBundle: ~
+                    SonataUserBundle: ~
+
+[...]
+# at the end of your file
 sonata_user:
     security_acl: true
     manager_type: orm # can be orm or mongodb
@@ -63,20 +139,9 @@ fos_user:
     group:
         group_class: Application\Sonata\UserBundle\Entity\Group
 
-doctrine:
-    orm:
-        entity_managers:
-            default:
-                mappings:
-# this mapping will be uncommented once we'll
-# extend the sonata user bundle (see below)
-#                    ApplicationSonataUserBundle: ~
-                    SonataUserBundle: ~
-
-    dbal:
-        types:
-            json: Sonata\Doctrine\Types\JsonType
 {% endhighlight %}
+
+Replace your **app/config/security.yml** content by:
 
 {% highlight yaml %}
 # app/config/security.yml
@@ -153,6 +218,8 @@ security:
 
 {% highlight yaml %}
 # app/config/routing.yml
+
+# Sonata Admin Bundle
 admin:
     resource: '@SonataAdminBundle/Resources/config/routing/sonata_admin.xml'
     prefix: /admin
@@ -162,6 +229,7 @@ _sonata_admin:
     type: sonata_admin
     prefix: /admin
 
+# Sonata User Bundle
 fos_user_security:
     resource: "@FOSUserBundle/Resources/config/routing/security.xml"
 
@@ -199,7 +267,7 @@ sonata_user:
 {% endhighlight %}
 
 We'll now generate the SonataUserBundle extension, in order to be able to extend our
-user and group model in an independent (from SonataUserBundle).
+**user and group models** in a bundle that extends SonataUserBundle, which itself extends FOSUSerBundle. We'll see that later in an other article.
 {% highlight bash %}
 app/console sonata:easy-extends:generate SonataUserBundle --dest="./src"
 {% endhighlight %}
@@ -233,65 +301,16 @@ public function registerBundles()
 
 You can now point to http://page.dev/app_dev.php/admin/dashboard and you're redirected to the login page if you were not previously logged.
 
-## Writing tests
+## Passing tests
 
-As we [have Behat installed]({% post_url 2013-09-26-cms-day02-behavior-driven-development-with-behat-and-mink %}), we can write tests for Sonata User install.
-
-{% highlight yaml %}
-Feature: sonata user installation
-  In order to protect admin
-  As a developer
-  I need to force users to login before seeing admin
-
-  Scenario: Forcing login before seeing admin page
-    Given I am not logged
-    And I go to "/admin/dashboard"
-    Then the response status code should be 302
-    And the url should match "/login"
-{% endhighlight %}
-
-The result of a ** bin/behat** command will be :
+ReReRun a :
 
 {% highlight bash %}
-[...]
-Feature: sonata user installation
-  In order to protect admin
-  As a developer
-  I need to force users to login before seeing admin
-
-  Scenario: Forcing login before seeing admin page
-    Given I am not logged
-    And I go to "/admin/dashboard"
-    Then the response status code should be 302
-    And the url should match "/login"
-
-3 scenarios (2 passed, 1 undefined)
-8 steps (4 passed, 3 skipped, 1 undefined)
-0m0.242s
-
-You can implement step definitions for undefined steps with these snippets:
-
-    /**
-     * @Given /^I am not logged$/
-     */
-    public function iAmNotLogged()
-    {
-        throw new PendingException();
-    }
-
+bin/behat --tags="sonataUser"
 {% endhighlight %}
 
-So in **features/bootstrap/FeatureContext.php** we add a new step definition.
+Green green green ! Go get a beer or a tea, and relax, Sonata User Bundle is correctly installed.
 
-{% highlight php %}
-// app/AppKernel.php
-    /**
-     * @Given /^I am not logged$/
-     */
-    public function iAmNotLogged()
-    {
-        $this->visit('/logout');
-    }
-{% endhighlight %}
+Next time, we'll seen how to inject test datas with fixtures.
 
-And you must have all tests passing, Sonata User Bundle is correctly installed.
+See you foune !
