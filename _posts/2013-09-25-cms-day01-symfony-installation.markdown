@@ -46,12 +46,22 @@ sudo setfacl -dR -m u:$APACHEUSER:rwX -m u:`whoami`:rwX app/cache app/logs app/d
 {% endhighlight %}
 
 You can now point to [http://tuto.dev/config.php/](http://tuto.dev/config.php/) to check our configuration.
-Then make appropriates change to your /etc/php5/apache2/php.ini file.
+Then make appropriates change to your **/etc/php5/apache2/php.ini** file.
+
+**Note** :  On ubuntu 12.04 xdebug config is done in **/etc/php5/apache2/conf.d/20-xdebug.ini**.
+
+{% highlight bash %}
+sudo service apache2 restart
+{% endhighlight %}
+
 You also have to make the check on CLI side as the php.ini file used is different.
 
 {% highlight bash %}
-app/check.php
+# can be useful
+chmod 777 app/check.php
+php app/check.php
 {% endhighlight %}
+
 Then make appropriates change to your /etc/php5/cli/php.ini file.
 
 If you want to upgrade your php to a newest version you can read my
@@ -106,18 +116,13 @@ doctrine:
         user:     %database_user%
         password: %database_password%
         charset:  UTF8
-        path:     %database_path%
-        memory:   %database_memory%
+        path:     %database_path%   <-- uncomment this line
+        memory:   %database_memory% <-- add this line
 {% endhighlight %}
 
+Create the database.
 {% highlight bash %}
-app/console doctrine:database:create
-{% endhighlight %}
-
-Create the app/data folder for your sqlite db, set the right permissions and create your database.
-{% highlight bash %}
-app/console doctrine:database:create
-app/console doctrine:schema:update --force
+    app/console doctrine:database:create
 {% endhighlight %}
 
 ## Hacking composer.json
@@ -125,7 +130,8 @@ app/console doctrine:schema:update --force
 Two little things about composer and __composer update__ :
 
   - Composer makes a hard copy of your assets (css, js, img) in the **web/ folder**. When you work on Linux you can just make **symlinks**. So we will add a **"symfony-assets-install": "symlink"** directive in composer.json.
-  - Composer verifies that your parameters are conform to **config.yml.dist** template. So it deletes **path** and **memory** lines in our **parameter.yml**. We will add a **"keep-outdated": true** line in composer.json.
+  - Composer verifies that your parameters are conform to **config.yml.dist** template. So it deletes **path** and **memory** lines in our **parameter.yml**. We will add a **"keep-outdated": true** line in composer.json in order to keep our sqlite settings (path and memory).
+  If you don't do this, **doctrine.dbal.path** and **doctrine.dbal.memory** are deleted from your parameter.yml file eache time you do a **composer update**.
 
 Add two lines in composer.json
 {% highlight json %}
@@ -135,12 +141,12 @@ Add two lines in composer.json
         "symfony-web-dir": "web",
         "incenteev-parameters": {
             "file": "app/config/parameters.yml",
-            "keep-outdated": true  <----------
+            "keep-outdated": true
         },
         "branch-alias": {
             "dev-master": "2.3-dev"
         },
-        "symfony-assets-install": "symlink"  <----------
+        "symfony-assets-install": "symlink"
     }
     [...]
 {% endhighlight %}
@@ -151,9 +157,9 @@ Yes we are supposed to work with versioning even when working alone.
 I personally work with [git-flow](https://github.com/nvie/gitflow) but it's another story.
 
 {% highlight bash %}
-git init
-git add .
-git commit -m "Symfony initial install"
+    git init
+    git add .
+    git commit -m "Symfony initial install"
 {% endhighlight %}
 
 Et voilà ! Next step will be to install [Behavior Driven Development tools]({% post_url 2013-09-26-cms-day02-behavior-driven-development-with-behat-and-mink %})
