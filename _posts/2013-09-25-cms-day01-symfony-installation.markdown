@@ -130,8 +130,8 @@ Create the database.
 Two little things about composer and __composer update__ :
 
   - Composer makes a hard copy of your assets (css, js, img) in the **web/ folder**. When you work on Linux you can just make **symlinks**. So we will add a **"symfony-assets-install": "symlink"** directive in composer.json.
-  - Composer verifies that your parameters are conform to **config.yml.dist** template. So it deletes **path** and **memory** lines in our **parameter.yml**. We will add a **"keep-outdated": true** line in composer.json in order to keep our sqlite settings (path and memory).
-  If you don't do this, **doctrine.dbal.path** and **doctrine.dbal.memory** are deleted from your parameter.yml file eache time you do a **composer update**.
+  - Composer verifies that your parameters are conform to **config.yml.dist** template. So it deletes **path** and **memory** lines in our **parameter.yml**. We will add a **"keep-outdated": true** **incenteev-parameters** line in composer.json in order to keep our sqlite settings (path and memory).
+  If you don't do this, **doctrine.dbal.path** and **doctrine.dbal.memory** are deleted from your parameter.yml file each time you do a **composer update**.
 
 Add two lines in composer.json
 {% highlight json %}
