@@ -112,7 +112,15 @@ public function registerBundles()
 [...]
 doctrine:
     dbal:
-        [... database connexion setup ]
+        driver:   %database_driver%
+        host:     %database_host%
+        port:     %database_port%
+        dbname:   %database_name%
+        user:     %database_user%
+        password: %database_password%
+        charset:  UTF8
+        path:     %database_path%
+        memory:   %database_memory%
         types:
             json: Sonata\Doctrine\Types\JsonType
 
