@@ -20,10 +20,10 @@ First day of our [Build CMS Application with Symfony]({% post_url 2013-09-23-cms
 
 Verify the last version of Symfony on the [Download page][Symfony download]
 
-Create a [page.dev virtual hosts]({% post_url 2013-08-24-setup-a-virtual-host-on-ubuntu %})
+Create a [tuto.dev virtual hosts]({% post_url 2013-08-24-setup-a-virtual-host-on-ubuntu %})
 
 {% highlight bash %}
-cd /home/www/page.dev
+cd /home/www/tuto.dev
 
 # here the last parameter "2.3.5" is the version previously checked
 composer create-project symfony/framework-standard-edition . 2.3.6
@@ -36,7 +36,7 @@ During this install you will be prompted for some settings (database, etc ...). 
 I use this code to set permissions on my dev box. Other ways can be found in [Symfony install doc][file perms].
 
 {% highlight bash %}
-cd /home/www/page.dev
+cd /home/www/tuto.dev
 rm -rf app/cache/*
 rm -rf app/logs/*
 mkdir app/data # will hosts our database
@@ -45,7 +45,7 @@ sudo setfacl -R -m u:$APACHEUSER:rwX -m u:`whoami`:rwX app/cache app/logs app/da
 sudo setfacl -dR -m u:$APACHEUSER:rwX -m u:`whoami`:rwX app/cache app/logs app/data
 {% endhighlight %}
 
-You can now point to [http://page.dev/config.php/](http://page.dev/config.php/) to check our configuration.
+You can now point to [http://tuto.dev/config.php/](http://tuto.dev/config.php/) to check our configuration.
 Then make appropriates change to your /etc/php5/apache2/php.ini file.
 You also have to make the check on CLI side as the php.ini file used is different.
 
@@ -63,7 +63,7 @@ sudo service apache2 restart
 {% endhighlight %}
 and your done. Nearly.
 
-You can already see your page at [http://page.dev/app_dev.php](http://page.dev/app_dev.php).
+You can already see your page at [http://tuto.dev/app_dev.php](http://tuto.dev/app_dev.php).
 
 ## Some more setup
 

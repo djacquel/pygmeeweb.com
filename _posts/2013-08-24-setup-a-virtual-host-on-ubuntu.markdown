@@ -6,13 +6,16 @@ comments: true
 
 Basic commands to setup a virtual host on Ubuntu 12.04
 
+This is a small howto to setup a virtual host on Ubuntu 12.04 with an upgraded version of php and apache (see my article about [PHP and Apache upgrade on Ubuntu 12-04]({% post_url 2013-08-29-install-php-5-4-4-on-ubuntu-12-04 %}).
+Default installation path ( **/home/www/tuto.dev** ) and host name ( **tuto.dev** ) will be used in all our tutorials.
+
 {% highlight bash %}
 sudo gedit /etc/hosts
 {% endhighlight %}
 
 add
 {% highlight bash %}
-127.0.0.1 page.dev
+127.0.0.1 tuto.dev
 {% endhighlight %}
 
 {% highlight bash %}
@@ -23,11 +26,11 @@ sudo gedit /etc/apache2/sites-available/page.conf
 {% highlight bash %}
 # /etc/apache2/sites-available/page.conf
 <VirtualHost *:80>
-    ServerName page.dev
+    ServerName tuto.dev
 
-    DocumentRoot /home/www/page.dev
+    DocumentRoot /home/www/tuto.dev/web
 
-    <Directory /home/www/page.dev>
+    <Directory /home/www/tuto.dev/web>
         Options Indexes FollowSymLinks
         AllowOverride All
         Order allow,deny
@@ -40,14 +43,14 @@ sudo gedit /etc/apache2/sites-available/page.conf
     # this allows to make automatic build
     # and then allow git repo creation
 
-    ErrorLog /home/logs/page.dev-error.log
+    ErrorLog /home/logs/tuto.dev-error.log
 
     # Possible values include: debug, info, notice, warn, error, crit,
     # alert, emerg.
 
     LogLevel info
 
-    CustomLog /home/logs/page.dev-access.log combined
+    CustomLog /home/logs/tuto.dev-access.log combined
 </VirtualHost>
 {% endhighlight %}
 
@@ -58,7 +61,7 @@ sudo a2ensite page.conf
 sudo service apache2 reload
 {% endhighlight %}
 
-You can then got to [http://page.dev][page.dev]
+You can then got to [http://tuto.dev][tuto.dev]
 
 
 If you get the following error :
@@ -87,4 +90,4 @@ sudo service apache2 restart
 {% endhighlight %}
 a the error must be gone.
 
-[page.dev]: http://page.dev
+[tuto.dev]: http://tuto.dev
