@@ -26,7 +26,7 @@ Create a [page.dev virtual hosts]({% post_url 2013-08-24-setup-a-virtual-host-on
 cd /home/www/page.dev
 
 # here the last parameter "2.3.5" is the version previously checked
-composer create-project symfony/framework-standard-edition . 2.3.5
+composer create-project symfony/framework-standard-edition . 2.3.6
 {% endhighlight %}
 
 During this install you will be prompted for some settings (database, etc ...). You can validate all the default, we'll take care of this later.
