@@ -23,6 +23,8 @@ sudo touch /etc/apache2/sites-available/page.conf
 sudo gedit /etc/apache2/sites-available/page.conf
 {% endhighlight %}
 
+**Note** : setup a host for a Symfony application. Files are in **/home/www/tuto.dev** but web root is in **/home/www/tuto.dev/web**.
+
 {% highlight bash %}
 # /etc/apache2/sites-available/page.conf
 <VirtualHost *:80>

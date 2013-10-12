@@ -13,7 +13,7 @@ First day of our [Build CMS Application with Symfony]({% post_url 2013-09-23-cms
 
   - base knowledge of Symfony 2 ([see the doc][Symfony2 doc]),
   - composer installed globally (see [Composer doc][composer install globally]),
-  - a virtual host setup (see [Setup a virtual host on Ubuntu]({% post_url 2013-08-24-setup-a-virtual-host-on-ubuntu %})). NB: the host must point to the /web folder of your Symfony install,
+  - a virtual host setup (see [Setup a virtual host on Ubuntu]({% post_url 2013-08-24-setup-a-virtual-host-on-ubuntu %})),
   - if you want to do some clever git version : [gitflow](https://github.com/nvie/gitflow "gitflow repository on github") installed
 
 ## Let's go for the base install
