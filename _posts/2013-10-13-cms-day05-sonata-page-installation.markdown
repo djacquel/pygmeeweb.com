@@ -33,8 +33,8 @@ Feature: sonata page installation
   Scenario: Managing Sonata page elements from dashboard
     Given I am logged
     And I go to "/admin/dashboard"
-    Then I should see "sonata_page"
-    And I should see "sonata_notification"
+    Then I should see "Pages"
+    And I should see "Notification"
 {% endhighlight %}
 
 
