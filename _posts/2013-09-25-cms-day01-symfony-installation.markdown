@@ -125,6 +125,16 @@ doctrine:
 Create the database.
 {% highlight bash %}
     app/console doctrine:database:create
+    chmod 664 app/data/database.sqlite
+{% endhighlight %}
+
+Finally uncomment **translator** line :
+{% highlight yaml %}
+# app/config/config.yml
+[...]
+framework:
+    #esi:             ~
+    translator:      { fallback: %locale% }
 {% endhighlight %}
 
 ## Hacking composer.json

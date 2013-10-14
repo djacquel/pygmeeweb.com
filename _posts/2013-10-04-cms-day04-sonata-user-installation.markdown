@@ -327,6 +327,9 @@ For example to verify if a given user can login properly.
 Create an admin user
 
 {% highlight bash %}
+# create database tables
+app/console doctrine:schema:create
+# create a super admin
 app/console fos:user:create admin admin@example.com admin --super-admin
 {% endhighlight %}
 
@@ -340,11 +343,11 @@ Write a new scenario in **src/My/BDDBundle/Features/03-sonata-user-install.featu
     And I fill in "username" with "admin"
     And I fill in "password" with "admin"
     And I press "_submit"
-    Then I should see "sonata_user"
-    And I should see "user_block_logout"
+    Then I should see "Users"
+    And I should see "Logout"
 {% endhighlight %}
 
-Green !
+A new **bin/behat --tags="sonataUser"** will give you an *All green* result.
 
 Next time, we'll seen [Sonata Page Installation]({% post_url 2013-10-13-cms-day05-sonata-page-installation %})
 

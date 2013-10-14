@@ -11,8 +11,52 @@ comments: false
 Installing Donata Page Bundle in order to finish our CMS.
 
 
-Hello ! Fifth day of our tuto on how to make a small CMS with Symfony and Sonata bundles.
-Today we'll install Sonata Page Bundle.
+Hello ! Fifth day of our [tutorial on how to make a small CMS with Symfony and Sonata bundles]({% post_url 2013-09-23-cms-day00 %}). Previous article [Sonata User Installation]({% post_url 2013-10-04-cms-day04-sonata-user-installation %}).
+
+Today we'll install Sonata Page Bundle. You can read the [Sonata page documentation](http://www.sonata-project.org/bundles/page/master/doc/index.html).
+
+## Writing tests
+
+As we [have Behat installed]({% post_url 2013-09-26-cms-day02-behavior-driven-development-with-behat-and-mink %}), we can write tests for Sonata Page install.
+
+{% highlight bash %}
+touch src/My/BDDBundle/Features/04-sonata-page-install.feature
+{% endhighlight %}
+
+{% highlight yaml %}
+@sonataPage
+Feature: sonata page installation
+  In order to manage site pages
+  As a smart developer
+  I need to get Sonata page installed
+
+  Scenario: Managing Sonata page elements from dashboard
+    Given I am logged
+    And I go to "/admin/dashboard"
+    Then I should see "sonata_page"
+    And I should see "sonata_notification"
+{% endhighlight %}
+
+
+The result of a **bin/behat --tags="sonataPage"** command will ask you to implement a new *iAmLoggedInAsAdmin* step.
+Just open **src/My/BDDBundle/Features/Context/FeatureContext.php** and add :
+{% highlight php %}
+// src/My/BDDBundle/Features/Context/FeatureContext.php
+
+    /**
+     * @Given /^I am logged in as admin$/
+     */
+    public function iAmLoggedInAsAdmin()
+    {
+        $this->visit('/admin/login');
+        $this->fillField('username', 'admin');
+        $this->fillField('password', 'admin');
+        $this->pressButton('_submit');
+    }
+
+{% endhighlight %}
+
+The result of a **bin/behat --tags="sonataPage"** will now give you errors and that's good !
 
 ##Install
 
@@ -139,3 +183,34 @@ public function registerBundles()
     );
 }
 {% endhighlight %}
+
+## Updating database
+
+We have some more table to create in our database.
+
+{% highlight bash %}
+doctrine:schema:update --force
+{% endhighlight %}
+
+Error ! sqlite doesn't support this command. Son we have to do
+
+{% highlight bash %}
+app/console doctrine:database:drop --force
+app/console doctrine:schema:create
+chmod 664 app/data/database.sqlite
+app/console fos:user:create admin admin@example.com admin --super-admin
+{% endhighlight %}
+
+Not good ! Will see that in a next article.
+
+## Passing tests
+
+ReReRun a :
+
+{% highlight bash %}
+bin/behat --tags="sonataPage"
+{% endhighlight %}
+
+Green !
+
+Next article will talk about **Data Fixtures**. See you.
