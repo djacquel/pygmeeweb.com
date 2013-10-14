@@ -1,11 +1,8 @@
 ---
 layout: post
 title: "Symfony CMS - day 05 - Sonata Page Installation"
-description: ""
-category:
-tags: []
-published: true
-comments: false
+
+comments: true
 ---
 
 Installing Donata Page Bundle in order to finish our CMS.
@@ -31,7 +28,7 @@ Feature: sonata page installation
   I need to get Sonata page installed
 
   Scenario: Managing Sonata page elements from dashboard
-    Given I am logged
+    Given I am logged in as admin
     And I go to "/admin/dashboard"
     Then I should see "Pages"
     And I should see "Notification"
@@ -213,4 +210,4 @@ bin/behat --tags="sonataPage"
 
 Green !
 
-Next article will talk about **Data Fixtures**. See you.
+Next article will talk about [Data Fixtures]({% post_url 2013-10-14-cms-day06-data-fixtures %}). See you.
