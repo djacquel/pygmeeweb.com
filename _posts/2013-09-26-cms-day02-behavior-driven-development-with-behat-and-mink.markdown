@@ -26,8 +26,7 @@ In **composer.json** file add :
 [...]
     "require": {
         [...],
-    },
-    "require-dev": {
+
         "doctrine/data-fixtures": "1.0.*@dev",
         "doctrine/doctrine-fixtures-bundle": "dev-master",
         "phpunit/phpunit": "~3.7",
@@ -36,7 +35,6 @@ In **composer.json** file add :
         "behat/mink-browserkit-driver": "1.1.*@dev",
         "vipsoft/doctrine-data-fixtures-extension": "*"
     },
-    "scripts": {
 [...]
 {% endhighlight %}
 
@@ -82,10 +80,11 @@ default:
             base_url:  'http://tuto.dev/app_dev.php'
             default_session: 'symfony2'
 
-        VIPSoft\DoctrineDataFixturesExtension\Extension:
-          lifetime:    feature
-          autoload:    true
-          fixtures: ~
+        # will use this in a next article
+        #VIPSoft\DoctrineDataFixturesExtension\Extension:
+        #  lifetime: feature
+        #  autoload: true
+        #  fixtures: ~
 {% endhighlight %}
 
 ### Creating a test bundle
@@ -169,24 +168,24 @@ But wait ! We have **Mink** onboard ! And Mink comes with predefined steps.
 Open your **src/My/BDDBundle/Features/Context/FeatureContext.php** and make your class extend **MinkContext**.
 
 {% highlight php %}
-  <?php
+<?php
 
-    namespace My\BDDBundle\Features\Context;
+  namespace My\BDDBundle\Features\Context;
 
-    use Behat\Symfony2Extension\Context\KernelAwareInterface,
-        Symfony\Component\HttpKernel\KernelInterface;
+  use Behat\Symfony2Extension\Context\KernelAwareInterface,
+      Symfony\Component\HttpKernel\KernelInterface;
 
-    use Behat\Behat\Exception\PendingException;
-    use Behat\MinkExtension\Context\MinkContext;
+  use Behat\Behat\Exception\PendingException;
+  use Behat\MinkExtension\Context\MinkContext;
 
-    /**
-     * Feature context.
-     */
-    class FeatureContext extends MinkContext
-                      implements KernelAwareInterface
-    {
-      ...
-    }
+  /**
+   * Feature context.
+   */
+  class FeatureContext extends MinkContext
+                    implements KernelAwareInterface
+  {
+    ...
+  }
   ?>
 {% endhighlight %}
 

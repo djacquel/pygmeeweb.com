@@ -5,6 +5,11 @@ title: "pygmeeweb blog internal link"
 
 This is a dummy article that stores Pygmeeweb internal links
 
+
+
+
+
+ - [Symfony CMS - day 05 - Sonata Page Installation]({% post_url 2013-10-13-cms-day05-sonata-page-installation %})
  - [Symfony CMS - day 04 - Sonata User Installation]({% post_url 2013-10-04-cms-day04-sonata-user-installation %})
  - [Symfony CMS - day 03 - Sonata Admin Installation]({% post_url 2013-10-03-cms-day03-sonata-admin-installation %})
 

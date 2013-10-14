@@ -12,9 +12,10 @@ In this suite of articles, we'll describes setup on an Ubuntu box. Sorry but Win
 
 ## Build CMS Application with Symfony articles
 
-**NOTE** : this is not a <a href="/all-posts.html">all&nbsp;posts list</a>.
+**NOTE** : this is not an all&nbsp;posts list, for a complete blog posts list <a href="/all-posts.html">see here</a>.
 
  - [Symfony CMS - day 01 - Symfony installation]({% post_url 2013-09-25-cms-day01-symfony-installation %})
  - [Symfony CMS - day 02 - Behavior Driven Development with Behat and Mink]({% post_url 2013-09-26-cms-day02-behavior-driven-development-with-behat-and-mink %})
  - [Symfony CMS - day 03 - Sonata Admin Installation]({% post_url 2013-10-03-cms-day03-sonata-admin-installation %})
  - [Symfony CMS - day 04 - Sonata User Installation]({% post_url 2013-10-04-cms-day04-sonata-user-installation %})
+ - [Symfony CMS - day 05 - Sonata Page Installation]({% post_url 2013-10-13-cms-day05-sonata-page-installation %})

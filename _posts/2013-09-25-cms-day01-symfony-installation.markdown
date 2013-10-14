@@ -94,7 +94,7 @@ parameters:
     database_name: null
     database_user: null
     database_password: null
-    database_path: '%kernel.root_dir%/data/fnmns.sqlite'
+    database_path: '%kernel.root_dir%/data/database.sqlite'
     database_memory: true
     mailer_transport: smtp
     mailer_encryption: ssl
@@ -103,10 +103,12 @@ parameters:
     mailer_password: mailjetpassword
     locale: fr
     secret: areallylongsecretkey
-# end of file
+{% endhighlight %}
 
-# You also need to uncomment the "path" line in app/config/config.yml
-# and to add the 'memory' line
+You also need to uncomment the **path** line in app/config/config.yml and to add the **memory** line.
+{% highlight yaml %}
+# app/config/config.yml
+[...]
 doctrine:
     dbal:
         driver:   %database_driver%
@@ -116,8 +118,8 @@ doctrine:
         user:     %database_user%
         password: %database_password%
         charset:  UTF8
-        path:     %database_path%   <-- uncomment this line
-        memory:   %database_memory% <-- add this line
+        path:     %database_path%
+        memory:   %database_memory%
 {% endhighlight %}
 
 Create the database.

@@ -29,7 +29,7 @@ Feature: sonata admin installation
 
   Scenario: Go to Sonata admin home  page
     Given I am on "/admin/dashboard"
-    Then I should see "Sonata admin"
+    Then I should see "My Admin Dashboard"
 {% endhighlight %}
 
 The **@sonataAdmin** line is a tag. We can call bin/behat and just play feature or scenario associated with this tag. See [Gherkin tags documentation](http://docs.behat.org/guides/1.gherkin.html#tags) and [Gherkin Filters documentation](http://docs.behat.org/guides/6.cli.html#gherkin-filters).
@@ -74,6 +74,13 @@ composer update
 
 {% highlight yaml %}
 # app/config/config.yml
+[...]
+sonata_admin:
+    title:      My Admin Dashboard
+    dashboard:
+        blocks:
+            - { position: left, type: sonata.admin.block.admin_list }
+
 sonata_block:
     default_contexts: [cms]
     blocks:

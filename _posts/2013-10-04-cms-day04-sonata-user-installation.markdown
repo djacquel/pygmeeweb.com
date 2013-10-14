@@ -130,8 +130,10 @@ doctrine:
         entity_managers:
             default:
                 mappings:
-                    ApplicationSonataUserBundle: ~
+# we'll uncomment that later
+#                    ApplicationSonataUserBundle: ~
                     SonataUserBundle: ~
+                    FOSUserBundle: ~
 
 [...]
 # at the end of your file
@@ -318,7 +320,32 @@ bin/behat --tags="sonataUser"
 {% endhighlight %}
 
 Green green green ! Go get a beer or a tea, and relax, Sonata User Bundle is correctly installed.
+Of course, you are supposed to write some more tests to have a good coverage for functionalities.
 
-Next time, we'll seen how to inject test datas with fixtures.
+For example to verify if a given user can login properly.
 
-See you foune !
+Create an admin user
+
+{% highlight bash %}
+app/console fos:user:create admin admin@example.com admin --super-admin
+{% endhighlight %}
+
+Write a new scenario in **src/My/BDDBundle/Features/03-sonata-user-install.feature**
+
+{% highlight yaml %}
+[]
+  Scenario: Login as admin
+    Given I am not logged
+    And I go to "/admin/dashboard"
+    And I fill in "username" with "admin"
+    And I fill in "password" with "admin"
+    And I press "_submit"
+    Then I should see "sonata_user"
+    And I should see "user_block_logout"
+{% endhighlight %}
+
+Green !
+
+Next time, we'll seen [Sonata Page Installation]({% post_url 2013-10-13-cms-day05-sonata-page-installation %})
+
+See you soon !
