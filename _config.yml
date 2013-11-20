@@ -5,7 +5,7 @@ redcarpet:
 pygments: true
 relative_permalinks: false
 
-recent_posts: 5      # Posts on home page
+recent_posts: 50      # Posts on home page
 
 exclude:
   - README.md
