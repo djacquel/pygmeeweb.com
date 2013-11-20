@@ -18,9 +18,4 @@ But new ones will be online soon !
 
 Happy coding.
 
-
-[jekyll]:    http://jekyllrb.com
-[diem]: http://diem-project.org/
-[ghpages]: http://pages.github.com/
-[symfony]: http://symfony.com/
-[symfonyCMF]: http://cmf.symfony.com/
+{% include _links_library.markdown %}

@@ -127,11 +127,15 @@ doctrine:
     orm:
         auto_generate_proxy_classes: %kernel.debug%
 
-        entity_managers:
-            default:
+        # see https://github.com/stof/StofDoctrineExtensionsBundle/issues/141#issuecomment-7004310
+        # auto_mapping: true        ----> MOVED |
+                                                |
+        entity_managers:                        |
+            default:                            |
+                                                |
+                auto_mapping: true       <--- HERE !
+
                 mappings:
-# we'll uncomment that later
-#                    ApplicationSonataUserBundle: ~
                     SonataUserBundle: ~
                     FOSUserBundle: ~
 
@@ -282,7 +286,7 @@ We'll now generate the SonataUserBundle extension, in order to be able to extend
 app/console sonata:easy-extends:generate SonataUserBundle --dest="./src"
 {% endhighlight %}
 
-Then you can now uncomment the **ApplicationSonataUserBundle** mapping :
+Then you can add the **ApplicationSonataUserBundle** mapping :
 {% highlight yaml %}
 # app/config/config.yml
 [...]
@@ -309,7 +313,7 @@ public function registerBundles()
 }
 {% endhighlight %}
 
-You can now point to http://page.dev/app_dev.php/admin/dashboard and you're redirected to the login page if you were not previously logged.
+You can now point to http://tuto.dev/app_dev.php/admin/dashboard and you're redirected to the login page if you were not previously logged.
 
 ## Passing tests
 
@@ -336,7 +340,7 @@ app/console fos:user:create admin admin@example.com admin --super-admin
 Write a new scenario in **src/My/BDDBundle/Features/03-sonata-user-install.feature**
 
 {% highlight yaml %}
-[]
+[...]
   Scenario: Login as admin
     Given I am not logged
     And I go to "/admin/dashboard"

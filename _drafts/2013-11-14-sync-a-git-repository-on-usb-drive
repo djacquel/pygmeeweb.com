@@ -1,0 +1,32 @@
+---
+layout: post
+title: "How to synchronize a git repository on an USB drive"
+comments: false
+---
+
+## Variables
+%Work% ~/www/futura.dev
+%Backup% /media/rugged500/www/futura.dev
+%repoName% usbdrive
+
+
+cd %Work%
+git init
+
+cd %Backup%
+
+# can be -bare
+# but we need to %Work% from this folder (maybe)
+git init
+
+# if %Backup% is on the same branch as %Work% you can't push from %Work% to %Backup%
+# so we put %Backup% on a different branch
+git checkout -b dev
+
+cd %Work%
+
+#
+git remote add %repoName% %Backup%
+git add .
+git commit -m "first commit"
+git push %repoName% master

@@ -34,7 +34,6 @@ Feature: sonata page installation
     And I should see "Notification"
 {% endhighlight %}
 
-
 The result of a **bin/behat --tags="sonataPage"** command will ask you to implement a new *iAmLoggedInAsAdmin* step.
 Just open **src/My/BDDBundle/Features/Context/FeatureContext.php** and add :
 {% highlight php %}
@@ -68,10 +67,13 @@ In your *composer.json* file, add :
         "sonata-project/page-bundle": "2.3.*@dev",
         "sonata-project/seo-bundle": "1.*",
         "sonata-project/cache-bundle": "2.1.*@dev",
-        "sonata-project/notification-bundle": "2.2.*@dev"
+        "sonata-project/notification-bundle": "2.2.*@dev",
+
     },
 [...]
 {% endhighlight %}
+
+Note : the SimpleThingsEntityAuditBundle is needed for block creation on the Sonata Admin Side.
 
 Then run a
 {% highlight bash %}
@@ -99,6 +101,15 @@ public function registerBundles()
 {% highlight yaml %}
 # app/config/config.yml
 [...]
+
+sonata_block:
+    default_contexts: [cms]
+    blocks:
+        [...]
+
+    # https://github.com/sonata-project/SonataBlockBundle/blob/master/UPGRADE-2.2.md
+    context_manager: sonata.page.block.context_manager
+
 cmf_routing:
     chain:
         routers_by_id:
@@ -141,7 +152,29 @@ sonata_page:
         not_found: [404]    # render 404 page with "not_found" key (name generated: _page_internal_error_{key})
         fatal:     [500]    # so you can use the same page for different http errors or specify specific page for each error
 
+sonata_notification:
+    backend: sonata.notification.backend.runtime
+
+    queues:
+        - { queue: sonata_page, types: [sonata.page.create_snapshot, sonata.page.create_snapshots]}
+        - { queue: catchall, default: true}
+
+    backends:
+        doctrine:
+            message_manager: sonata.notification.manager.message.default
+            max_age:         86400     # max age in second
+            pause:           500000    # delay in microseconds
+            batch_size:      10        # number of messages on each iteration
+            states:                    # raising errors level
+                in_progress: 10
+                error:       20
+                open:        100
+                done:        10000
+
 {% endhighlight %}
+
+**Note** : The sonata_block.context_manager parameter is made to avoid the error : **An exception has been thrown during the rendering of a template ("The options "manager", "page_id" do not exist. Known options are: "attr", "class", "code", "extra_cache_keys", "layout", "template", "ttl", "use_cache"") in SonataPageBundle::layout.html.twig at line 18.**
+
 
 ## Extending Page Bundle
 
@@ -163,7 +196,7 @@ doctrine:
                     ApplicationSonataUserBundle: ~
                     SonataUserBundle: ~
                     FOSUserBundle: ~
-                    ApplicationSonataPageBundle: ~ # only once the ApplicationSonataPageBundle is generated
+                    ApplicationSonataPageBundle: ~
                     SonataPageBundle: ~
 
 [...]
@@ -205,6 +238,7 @@ Not good ! Will see that in a next article.
 ReReRun a :
 
 {% highlight bash %}
+app/console cache:clear --env=test
 bin/behat --tags="sonataPage"
 {% endhighlight %}
 

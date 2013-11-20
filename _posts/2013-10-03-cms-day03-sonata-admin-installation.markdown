@@ -55,6 +55,7 @@ In your *composer.json* file, add :
         "sonata-project/admin-bundle": "dev-master",
         "sonata-project/intl-bundle": "2.2.*@dev",
         "sonata-project/doctrine-orm-admin-bundle": "2.2.*@dev",
+        "simplethings/entity-audit-bundle": "0.*@dev",
         "sonata-project/block-bundle": "2.2.*@dev",
         "sonata-project/jquery-bundle": "1.8.*",
         "sonata-project/cache-bundle": "2.1.*@dev",
@@ -87,6 +88,11 @@ sonata_block:
         # Enable the SonataAdminBundle block
         sonata.admin.block.admin_list:
             contexts:   [admin]
+
+        sonata.block.service.text:
+        sonata.page.block.container:
+        sonata.page.block.children_pages:
+
 {% endhighlight %}
 
 ### routing
@@ -117,12 +123,12 @@ public function registerBundles()
         new Sonata\BlockBundle\SonataBlockBundle(),
         new Sonata\jQueryBundle\SonatajQueryBundle(),
         new Knp\Bundle\MenuBundle\KnpMenuBundle(),
-        //...
 
         // If you haven't already, add the storage bundle
         // This example uses SonataDoctrineORMAdmin but
         // it works the same with the alternatives
         new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
+        new SimpleThings\EntityAudit\SimpleThingsEntityAuditBundle(),
 
         // Then add SonataAdminBundle
         new Sonata\AdminBundle\SonataAdminBundle(),
@@ -130,6 +136,9 @@ public function registerBundles()
     );
 }
 {% endhighlight %}
+
+**Note** : We add SimpleThingsEntityAuditBundle because it's a non declared dependancy of SonataDoctrineORMAdminBundle (see [SonataDoctrineORMAdminBundle git](https://github.com/sonata-project/SonataDoctrineORMAdminBundle/issues/266)).
+If you don't add it, it produce a **Catchable Fatal Error: Argument 3 passed to Sonata\DoctrineORMAdminBundle\Block\AuditBlockService::__construct() must be an instance of SimpleThings\EntityAudit\AuditReader, null given, blah blah** when later creating block in Sonata page.
 
 ## Publishing web assets + some cleanup
 

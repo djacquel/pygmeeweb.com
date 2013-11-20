@@ -205,6 +205,11 @@ a.logoLink:hover{
   padding: 2px;
 }
 
+.post blockquote{
+  background-color: #444;
+  color: #fff;
+  padding: 5px;
+}
 
 .warning{
   background: MistyRose;

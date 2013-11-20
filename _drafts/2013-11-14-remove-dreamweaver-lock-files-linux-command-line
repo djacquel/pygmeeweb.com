@@ -1,0 +1,19 @@
+---
+layout: post
+title: "How to remove Dreamveaver .LCK files from Linux command line"
+comments: false
+---
+
+It can append that you find some *.LCK files on a server.
+They come from Dreamweaver.
+
+Let's remove them from command line :
+
+{% highlight bash %}
+  # count LCK files
+  find . -name "*.LCK" | wc -l
+  # from document root
+  find . -name "*.LCK" -exec rm {} \;
+{% endhighlight %}
+
+Done !

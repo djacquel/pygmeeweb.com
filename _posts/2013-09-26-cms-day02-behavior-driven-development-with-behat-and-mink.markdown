@@ -57,6 +57,33 @@ class AppKernel extends Kernel
 
 You now have a full BDD tool onboard, we'll configure it.
 
+### Creating a test bundle
+
+In order to have all our BDD tests at the same place, we create an empty bundle.
+We choose "annotation" for config format and no route update.
+
+{% highlight bash %}
+app/console generate:bundle --namespace=My/BDDBundle
+{% endhighlight %}
+
+Ensure that your bundle is enabled in app/AppKernel.php.
+
+{% highlight php %}
+class AppKernel extends Kernel
+{
+    public function registerBundles()
+    {
+        $bundles = array(
+          [...]
+          new My\BDDBundle\MyBDDBundle()
+[...]
+{% endhighlight %}
+
+We then create folder to host our BDD tests in our BDD Bundle.
+{% highlight bash %}
+bin/behat --init "@MyBDDBundle"
+{% endhighlight %}
+
 ## Using Behat
 
 ### Configure Behat
@@ -85,20 +112,6 @@ default:
         #  lifetime: feature
         #  autoload: true
         #  fixtures: ~
-{% endhighlight %}
-
-### Creating a test bundle
-
-In order to have all our BDD tests at the same place, we create an empty bundle.
-We choose "annotation" for config format and no route update.
-
-{% highlight bash %}
-app/console generate:bundle --namespace=My/BDDBundle
-{% endhighlight %}
-
-We then create folder to host our BDD tests in our BDD Bundle.
-{% highlight bash %}
-bin/behat --init "@MyBDDBundle"
 {% endhighlight %}
 
 ## Create your first feature test
@@ -134,7 +147,7 @@ Feature: Fresh Symfony installation
   As a smart developer
   I need to be able to see the default Symfony Standard Edition Home page
 
-  Scenario: View the home page # src/My/BDDBundle/Features/01-symfony-install.feature:7
+  Scenario: View the home page
     Given I am on the homepage
     Then I should see "I love Espelette pepper !"
 

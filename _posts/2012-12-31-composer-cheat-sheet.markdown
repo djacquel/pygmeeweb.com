@@ -7,8 +7,9 @@ comments: false
 Usefull commands for composer
 
 ## WORK IN PROGRESS
-[Composer documentation](http://getcomposer.org/doc/)
-[Packages for composer : Packagist.org](https://packagist.org/)
+
+[Composer documentation][Composer]
+[Packages for composer : Packagist.org][Packagist]
 
 ## Install globally on *nix
 
@@ -22,7 +23,9 @@ You can now invoke _**composer**_ from anywhere.
 
 ## options for all commands
 
-**Not all commands are referenced here** for a more exhaustive view please see [Composer commands documentation](http://getcomposer.org/doc/03-cli.md).
+**Not all commands are referenced here** for a more exhaustive view please
+
+see [Composer commands documentation][Composercli].
 
 **-v** verbose | **-h** help | **-q** no output | **-n** no interaction
 **--profile** timing and memory usage | **-V** version
@@ -47,3 +50,5 @@ You can now invoke _**composer**_ from anywhere.
 | 1.0.* | >=1.0,<1.1 |
 | ~1.2 |>=1.2,<2.0 |
 | ~1.2.3 | >=1.2.3,<1.3 |
+
+{% include _links_library.markdown %}

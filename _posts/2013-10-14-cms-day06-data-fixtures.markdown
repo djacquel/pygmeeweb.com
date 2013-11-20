@@ -103,7 +103,6 @@ class LoadUserData extends AbstractFixture
     }
 
 }
-?>
 {% endhighlight %}
 
 This file will load datas from **src/Application/Sonata/UserBundle/DataFixtures/ORM/010-LoadUserData.yml**
@@ -144,10 +143,17 @@ userbob:
 
 Now if you run a :
 {% highlight bash %}
+# to run all our fixtures all over our app
 app/console doctrine:fixtures:load
+
+# or just a specific fixture
+app/console doctrine:fixtures:load --fixtures=src/Application/Sonata/UserBundle/DataFixtures/ORM/
+
+# multiple fixtures
+php app/console doctrine:fixtures:load --fixtures=/path/to/fixture1 --fixtures=/path/to/fixture2 --append
 {% endhighlight %}
 
-You will have database populated with three users. This will be useful to populate our database with known datas each time we run a test.
+This will be useful to populate our database with known datas each time we run a test.
 
 To make that our fixtures are loaded for each Feature, we'll uncomment the four last lines in our behat.yml file:
 
@@ -204,9 +210,9 @@ touch src/My/BDDBundle/Features/05-data-fixtures.feature
 Feature: admin dashboard protection
   In order to protect admin
   As a smart developer
-  I need to force forbid access to admin from basic authenticated user
+  I need to forbid access to admin from basic user
 
-  Scenario: Try to log to admin with basic user credentials
+  Scenario: Try to access admin with basic user credentials
     Given I am logged in as Bob
     And I go to "/admin/dashboard"
     Then I should see "Access Denied"
@@ -220,4 +226,36 @@ bin/behat --tags="fixtures"
 
 If you implement **iAmLoggedInAsBob** step in your context (see previous article). All the lights a greens.
 
-See you next time for an article on how to use Sonata page.
+See you next time for an article on how to use sonata.
+
+**Edit oct 22** : Implementation for the **iAmLoggedInAsBob** step. Note that we refactor ** iAmLoggedInAsAdmin** step.
+
+{% highlight php %}
+<?php
+// src/My/BDDBundle/Features/Context/FeatureContext.php
+class FeatureContext extends MinkContext
+                     implements KernelAwareInterface
+{
+[...]
+    /**
+     * @Given /^I am logged in as admin$/
+     */
+    public function iAmLoggedInAsAdmin(){
+        $this->loginAs('admin', 'admin');
+    }
+
+    /**
+     * @Given /^I am logged in as Bob$/
+     */
+    public function iAmLoggedInAsBob(){
+        $this->loginAs('bob', 'bob');
+    }
+
+    private function loginAs($user, $password){
+        $this->visit('/admin/login');
+        $this->fillField('username', $user);
+        $this->fillField('password', $password);
+        $this->pressButton('_submit');
+    }
+
+{% endhighlight %}

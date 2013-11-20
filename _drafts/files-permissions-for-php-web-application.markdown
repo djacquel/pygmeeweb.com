@@ -16,4 +16,4 @@ sudo adduser yourUserName www-data
 
 
 [Symfony install]: {% post_url 2013-08-25-how-to-make-a-base-symfony-installation-on-ubuntu %}
-[sontaAdminInstall]: {% post_url 2013-10-03-sonata-bundles-suite-sonata-admin-installation %}
+[sontaAdminInstall]: {% post_url 2013-10-03-cms-day03-sonata-admin-installation %}

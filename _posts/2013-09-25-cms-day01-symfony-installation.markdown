@@ -7,20 +7,20 @@ comments: true
 A quick Symfony base installation.
 
 
-First day of our [Build CMS Application with Symfony]({% post_url 2013-09-23-cms-day00 %}) articles suite.
+First day of our [Build CMS Application with Symfony][cms0] articles suite.
 
 ## Pre-requisites
 
-  - base knowledge of Symfony 2 ([see the doc][Symfony2 doc]),
-  - composer installed globally (see [Composer doc][composer install globally]),
-  - a virtual host setup (see [Setup a virtual host on Ubuntu]({% post_url 2013-08-24-setup-a-virtual-host-on-ubuntu %})),
-  - if you want to do some clever git version : [gitflow](https://github.com/nvie/gitflow "gitflow repository on github") installed
+  - base knowledge of Symfony 2 ([see the doc][Symfony2Doc]),
+  - composer installed globally (see [Composer doc][ComposerGlobal]),
+  - a virtual host setup (see [Setup a virtual host on Ubuntu][vhostSetup]),
+  - if you want to do some clever git version : [gitflow on Github][gitflow] installed
 
 ## Let's go for the base install
 
 Verify the last version of Symfony on the [Download page][Symfony download]
 
-Create a [tuto.dev virtual hosts]({% post_url 2013-08-24-setup-a-virtual-host-on-ubuntu %})
+Create a [tuto.dev virtual hosts][vhostSetup]
 
 {% highlight bash %}
 cd /home/www/tuto.dev
@@ -33,7 +33,7 @@ During this install you will be prompted for some settings (database, etc ...). 
 
 ## Setting files permissions
 
-I use this code to set permissions on my dev box. Other ways can be found in [Symfony install doc][file perms].
+I use this code to set permissions on my dev box. Other ways can be found in [Symfony install doc][Symfony file permissions].
 
 {% highlight bash %}
 cd /home/www/tuto.dev
@@ -65,7 +65,7 @@ php app/check.php
 Then make appropriates change to your /etc/php5/cli/php.ini file.
 
 If you want to upgrade your php to a newest version you can read my
-[Install PHP 5-5-4 on Ubuntu 12-04]({% post_url 2013-08-29-install-php-5-4-4-on-ubuntu-12-04 %}).
+[Install PHP 5-5-4 on Ubuntu 12-04][ubuntuPHP544].
 
 One more
 {% highlight bash %}
@@ -101,7 +101,7 @@ parameters:
     mailer_host: in.mailjet.com
     mailer_user: mailjetuser
     mailer_password: mailjetpassword
-    locale: fr
+    locale: en
     secret: areallylongsecretkey
 {% endhighlight %}
 
@@ -166,7 +166,7 @@ Add two lines in composer.json
 ## Version the code
 
 Yes we are supposed to work with versioning even when working alone.
-I personally work with [git-flow](https://github.com/nvie/gitflow) but it's another story.
+I personally work with [git-flow][gitflow].
 
 {% highlight bash %}
     git init
@@ -174,10 +174,6 @@ I personally work with [git-flow](https://github.com/nvie/gitflow) but it's anot
     git commit -m "Symfony initial install"
 {% endhighlight %}
 
-Et voilà ! Next step will be to install [Behavior Driven Development tools]({% post_url 2013-09-26-cms-day02-behavior-driven-development-with-behat-and-mink %})
+Et voilà ! Next step will be to install [Behavior Driven Development tools][cms2]
 
-
-[Symfony2 doc]: http://symfony.com/doc/current/index.html
-[composer install globally]: http://getcomposer.org/doc/00-intro.md#globally
-[Symfony download]: http://symfony.com/download
-[file perms]: http://symfony.com/doc/current/book/installation.html#configuration-and-setup
+{% include _links_library.markdown %}
