@@ -67,9 +67,4 @@ find whereourfileslives/ -type d -exec chmod 755 {} \;
 find whereourfileslives/ -type f -exec chmod 644 {} \;
 {% endhighlight %}
 
-[leonard]: http://leonard.io/blog/2012/05/installing-ruby-1-9-3-on-ubuntu-12-04-precise-pengolin/
-[jekyll]:    http://jekyllrb.com
-[ghpages]: http://pages.github.com/
-[ghpagesdoc]: https://help.github.com/categories/20/articles
-
-
+{% include _links_library.markdown %}

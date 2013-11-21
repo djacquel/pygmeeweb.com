@@ -15,6 +15,16 @@ this is the include tag. just remove the remove
 
 
 <!--- ++++++++++++++++++++++ SITE'S PAGES ++++++++++++++++++++++ --->
+
+[composerCS]: {% post_url 2012-12-31-composer-cheat-sheet %}
+
+[welcome]: {% post_url 2013-08-21-welcome-to-the-new-pygmeeweb %}
+[playingJekyll]: {% post_url 2013-08-22-playing-with-github-pages-and-jekyll %}
+[vhostSetup]: {% post_url 2013-08-24-setup-a-virtual-host-on-ubuntu %}
+
+[ubuntuPHP544]: {% post_url 2013-08-29-install-php-5-4-4-on-ubuntu-12-04 %}
+[gitflowWay]: {% post_url 2013-09-02-git-the-gitflow-way %}
+
 [cms0]: {% post_url 2013-09-23-cms-day00 %}
 [cms1]: {% post_url 2013-09-25-cms-day01-symfony-installation %}
 [cms2]: {% post_url 2013-09-26-cms-day02-behavior-driven-development-with-behat-and-mink %}
@@ -23,18 +33,16 @@ this is the include tag. just remove the remove
 [cms5]: {% post_url 2013-10-13-cms-day05-sonata-page-installation%}
 [cms6]: {% post_url 2013-10-14-cms-day06-data-fixtures%}
 
-[composerCS]: {% post_url 2012-12-31-composer-cheat-sheet %}
 
-[vhostSetup]: {% post_url 2013-08-24-setup-a-virtual-host-on-ubuntu %}
+[tuto.dev]: http://tuto.dev
 
-[ubuntuPHP544]: {% post_url 2013-08-29-install-php-5-4-4-on-ubuntu-12-04 %}
 
 <!--- ++++++++++++++++++++++ EXTERNAL PAGES ++++++++++++++++++++++ --->
 [jekyll]: http://jekyllrb.com/
-
-[diem]: http://diem-project.org/
+[leonard]: http://leonard.io/blog/2012/05/installing-ruby-1-9-3-on-ubuntu-12-04-precise-pengolin/
 
 [ghpages]: http://pages.github.com/
+[ghpagesdoc]: https://help.github.com/categories/20/articles
 
 [Symfony]: http://symfony.com/
 [Symfony download]: http://symfony.com/download
@@ -42,8 +50,21 @@ this is the include tag. just remove the remove
 [Symfony file permissions]: http://symfony.com/doc/current/book/installation.html#configuration-and-setup
 
 [symfonyCMF]: http://cmf.symfony.com/
-
 [Jobeet2]: http://www.ens.ro/2012/03/21/jobeet-tutorial-with-symfony2/
+
+[Doctrine fixtures Bundle]: http://symfony.com/doc/current/bundles/DoctrineFixturesBundle/
+
+[Behat]: http://behat.org/
+[read behat doc]: http://docs.behat.org
+[More about features on behat.org]: http://docs.behat.org/quick_intro.html#more-about-features
+[steps documentation on behat.org]: http://docs.behat.org/quick_intro.html#more-about-steps
+[Behat symfony extension]: http://extensions.behat.org/symfony2/
+[Behat Fixtures extension]: http://extensions.behat.org/doctrine-data-fixtures/
+[Mink extension]: http://extensions.behat.org/mink/
+
+[phpunit]: https://github.com/sebastianbergmann/phpunit/
+
+[diem]: http://diem-project.org/
 
 [Composer]: http://getcomposer.org/doc/
 [Composercli]: http://getcomposer.org/doc/03-cli.md
@@ -52,3 +73,6 @@ this is the include tag. just remove the remove
 [Packagist]: https://packagist.org/
 
 [gitflow]: https://github.com/nvie/gitflow
+
+
+[Espelette pepper]: http://en.wikipedia.org/wiki/Espelette_pepper

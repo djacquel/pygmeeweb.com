@@ -6,20 +6,20 @@ comments: true
 
 How to do Behavior Driven Development (BDD) with Symfony
 
-Second day of our [Build CMS Application with Symfony]({% post_url 2013-09-23-cms-day00 %}) articles suite.
+Second day of our [Build CMS Application with Symfony][cms0] articles suite.
 
-Previous article [day 01 - Symfony installation]({% post_url 2013-09-25-cms-day01-symfony-installation %}).
+Previous article [day 01 - Symfony installation][cms1].
 
 ## Usefull readings
 
-[Behat documentation](http://behat.org/)
+[Behat documentation][Behat]
 
 ## Install
 
 We'll install :
 
-  - our BDD tools : [phpunit](https://github.com/sebastianbergmann/phpunit/), [Behat symfony extension](http://extensions.behat.org/symfony2/), [Mink extension](http://extensions.behat.org/mink/) and browserkit.
-  - fixtures tools to be able to load test datas : [Doctrine fixtures Bundle](http://symfony.com/doc/current/bundles/DoctrineFixturesBundle/) and [Behat Fixtures extension](http://extensions.behat.org/doctrine-data-fixtures/)
+  - our BDD tools : [phpunit][phpunit], [Behat symfony extension][Behat symfony extension], [Mink extension][Mink extension] and browserkit.
+  - fixtures tools to be able to load test datas : [Doctrine fixtures Bundle][Doctrine fixtures Bundle] and [Behat Fixtures extension][Behat Fixtures extension].
 
 In **composer.json** file add :
 {% highlight json %}
@@ -116,7 +116,7 @@ default:
 
 ## Create your first feature test
 
-In **src/My/BDDBundle/Features/** create a file named **01-symfony-install.feature**. [More about features on behat.org](http://docs.behat.org/quick_intro.html#more-about-features).
+In **src/My/BDDBundle/Features/** create a file named **01-symfony-install.feature**. [More about features on behat.org][More about features on behat.org].
 
 {% highlight bash %}
 touch src/My/BDDBundle/Features/01-symfony-install.feature
@@ -174,7 +174,7 @@ You can implement step definitions for undefined steps with these snippets:
     }
 {% endhighlight %}
 
-Behat is unable to find steps ([steps documentation on behat.org](http://docs.behat.org/quick_intro.html#more-about-steps)) and advise you to implement them.
+Behat is unable to find steps ([steps documentation on behat.org][steps documentation on behat.org]) and advise you to implement them.
 
 But wait ! We have **Mink** onboard ! And Mink comes with predefined steps.
 
@@ -250,8 +250,10 @@ bin/behat
 
 All the lights are now green !
 
-Don't forget to [read behat doc](http://docs.behat.org) and about [Espelette pepper](http://en.wikipedia.org/wiki/Espelette_pepper).
+Don't forget to [read behat doc][read behat doc] and about [Espelette pepper][Espelette pepper].
 
-Next article will be on [Sonata Admin Installation]({% post_url 2013-10-03-cms-day03-sonata-admin-installation %}).
+Next article will be on [Sonata Admin Installation][cms3].
 
 See you soon.
+
+{% include _links_library.markdown %}

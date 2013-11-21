@@ -6,7 +6,7 @@ comments: true
 
 Basic commands to setup a virtual host on Ubuntu 12.04
 
-This is a small howto to setup a virtual host on Ubuntu 12.04 with an upgraded version of php and apache (see my article about [PHP and Apache upgrade on Ubuntu 12-04]({% post_url 2013-08-29-install-php-5-4-4-on-ubuntu-12-04 %}).
+This is a small howto to setup a virtual host on Ubuntu 12.04 with an upgraded version of php and apache (see my article about [PHP and Apache upgrade on Ubuntu 12-04][ubuntuPHP544].
 Default installation path ( **/home/www/tuto.dev** ) and host name ( **tuto.dev** ) will be used in all our tutorials.
 
 {% highlight bash %}
@@ -92,4 +92,4 @@ sudo service apache2 restart
 {% endhighlight %}
 a the error must be gone.
 
-[tuto.dev]: http://tuto.dev
+{% include _links_library.markdown %}

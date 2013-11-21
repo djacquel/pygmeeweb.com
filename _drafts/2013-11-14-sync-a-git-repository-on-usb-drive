@@ -5,10 +5,10 @@ comments: false
 ---
 
 ## Variables
-%Work% ~/www/futura.dev
-%Backup% /media/rugged500/www/futura.dev
-%repoName% usbdrive
 
+%Work% ~/www/domaine.dev
+%Backup% /media/usbdisk/www/domaine.dev
+%repoName% usbdrive
 
 cd %Work%
 git init
@@ -25,7 +25,6 @@ git checkout -b dev
 
 cd %Work%
 
-#
 git remote add %repoName% %Backup%
 git add .
 git commit -m "first commit"
