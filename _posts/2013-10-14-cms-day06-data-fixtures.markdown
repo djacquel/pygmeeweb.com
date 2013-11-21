@@ -9,11 +9,11 @@ comments: true
 How to inject default datas in my application : with Data Fixtures.
 
 
-Sixth day of our [small CMS with Symfony howto]({% post_url 2013-09-23-cms-day00 %}). Previous article [Sonata Page Installation]({% post_url 2013-10-13-cms-day05-sonata-page-installation %}).
+Sixth day of our [small CMS with Symfony howto][cms0]. Previous article [Sonata Page Installation][cms5].
 
-In a previous [article on BDD]({% post_url 2013-09-26-cms-day02-behavior-driven-development-with-behat-and-mink %}), we've installed some bundles that we are not using yet [DoctrineFixturesBundle](http://symfony.com/doc/current/bundles/DoctrineFixturesBundle/index.html)
+In a previous [article on BDD][cms2], we've installed some bundles that we are not using yet [DoctrineFixturesBundle][Doctrine fixtures Bundle]
 and
-[Doctrine Data Fixtures Extension for Behat](https://github.com/vipsoft/DoctrineDataFixturesExtension) (in composer.json : **doctrine/data-fixtures**, **doctrine/doctrine-fixtures-bundle** and **vipsoft/doctrine-data-fixtures-extension**).
+[Doctrine Data Fixtures Extension for Behat][Behat Fixtures extension] (in composer.json : **doctrine/data-fixtures**, **doctrine/doctrine-fixtures-bundle** and **vipsoft/doctrine-data-fixtures-extension**).
 
 Those bundles will help us inject default data in our application before tests or before another project phase (staging, prod, etc).
 
@@ -113,7 +113,7 @@ useradmin:
     username: admin
     firstname: David
     lastname: Jacquel
-    date_of_birth: 1980-12-24
+    date_of_birth: 1980-10-20
     gender: m
     phone: +99999999999
     email: admin@example.com
