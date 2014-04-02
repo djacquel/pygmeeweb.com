@@ -5,9 +5,18 @@ this is mainly geared toward site inner links
 any changes made to an url can be easily reflected here
 and be used on both site's posts
 
-need to include this library in posts or page to use it
+Need to include this library in posts or page to use it
+When included on a post file, put it just before your intro paragraphe.
 
-this is the include tag. just remove the remove
+{% highlight yaml %}
+end of front matter
+---
+
+{\% include _links_library.markdown \%}
+Intro paragraphe
+{% endhighlight %}
+
+this is the include tag. just remove the **remove**
 
 {remove% include _links_library.markdown %remove}
 
@@ -36,6 +45,10 @@ this is the include tag. just remove the remove
 
 [tuto.dev]: http://tuto.dev
 
+[prey]: https://preyproject.com/
+[preySignup]: https://panel.preyproject.com/signup
+[preyDownload]: https://preyproject.com/download
+[preyPanel]: https://panel.preyproject.com/app
 
 <!--- ++++++++++++++++++++++ EXTERNAL PAGES ++++++++++++++++++++++ --->
 [jekyll]: http://jekyllrb.com/
