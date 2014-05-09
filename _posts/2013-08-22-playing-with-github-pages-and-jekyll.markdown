@@ -4,49 +4,69 @@ title:  "Playing with Github pages and Jekyll"
 comments: true
 ---
 
+{% include _links_library.markdown %}
+Installing and using Jekyll in five minutes.
+
 I've just reinstalled my Ubuntu so also I need to reinstall [Github pages][ghpages]. Let's go !
 
-
-## First ruby and gems
+## Installing ruby and gems
 
 We install ruby 1.9.3 and Gems.
 
 {% highlight bash %}
+# Ubuntu 12.04
 sudo apt-get update
-
 sudo apt-get install ruby1.9.1 ruby1.9.1-dev \
   rubygems1.9.1 irb1.9.1 ri1.9.1 rdoc1.9.1 \
   build-essential libopenssl-ruby1.9.1 libssl-dev zlib1g-dev
+{% endhighlight %}
 
-# now try
-ruby --version
-# got ruby 1.9.3 ...
+{% highlight bash %}
+# Ubuntu 14.04
+sudo apt-get update
+sudo apt-get install ruby ruby1.9.1-dev ri1.9.1 node-js
 {% endhighlight %}
 
 If you already have ruby 1.8 on your machine, your may encounter difficulties to make Jekyll work.
 Look at [Leonard Ehrenfried's blog][leonard] for a quick fix.
 
-## Second Jekyll
+## Bundler
+This gem will help update gems with a one line command.
+{% highlight bash %}
+sudo gem install bundler
+{% endhighlight %}
 
+## Jekyll
 {% highlight bash %}
 sudo gem install jekyll
 {% endhighlight %}
 
-## Set default structure
+## Generate files default structure
 
 {% highlight bash %}
+# go to your working folder
 cd /whereourfileslives
+# create a new site in this folder
 jekyll new .
 {% endhighlight %}
 
 Et hop ! You have your new website structure.
 
 In order to build your site the Github page way, you need the Gem.
-Just create a _Gemfile_ file at the root, containing :
+Just create a __Gemfile__ file at the root, containing :
 {% highlight ruby %}
 source 'https://rubygems.org'
 gem 'github-pages'
 {% endhighlight %}
+
+Install github-pages gem
+{% highlight ruby %}
+bundle install
+{% endhighlight %}
+
+You are now ready to use Jekyll.
+
+## Generating static pages
 
 As this default site already contains a post you can already _build_ your static site.
 
