@@ -1,0 +1,4 @@
+# use this to build on dev server
+# jekyll build --config _config.yml,_config_dev.yml
+host: http://pygmeeweb.dev
+disqus_shortname: pygmeeweb-dev
