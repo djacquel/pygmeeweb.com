@@ -7,7 +7,8 @@ comments: true
 {% include _links_library.markdown %}
 Installing and using Jekyll in five minutes.
 
-I've just reinstalled my Ubuntu so also I need to reinstall [Github pages][ghpages]. Let's go !
+As I'm often installing Ubuntu boxes, I needed a quick reminder to setup jekyll.
+This is how to get Jekyll running for [Github pages][ghpages] in five minutes.
 
 ## Installing ruby and gems
 

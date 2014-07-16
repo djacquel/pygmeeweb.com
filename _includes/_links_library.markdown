@@ -58,6 +58,7 @@ this is the include tag. just remove the **remove**
 [ghpagesdoc]: https://help.github.com/categories/20/articles
 
 [Symfony]: http://symfony.com/
+[Symfony2Doc]: http://symfony.com/doc/current/
 [Symfony download]: http://symfony.com/download
 [SymfonyDoc]: http://symfony.com/doc/current/index.html
 [Symfony file permissions]: http://symfony.com/doc/current/book/installation.html#configuration-and-setup

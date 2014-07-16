@@ -25,8 +25,8 @@ Create a [tuto.dev virtual hosts][vhostSetup]
 {% highlight bash %}
 cd /home/www/tuto.dev
 
-# here the last parameter "2.3.5" is the version previously checked
-composer create-project symfony/framework-standard-edition . 2.3.6
+# here the last parameter "2.4.4" is the version previously checked
+composer create-project symfony/framework-standard-edition . 2.4.4
 {% endhighlight %}
 
 During this install you will be prompted for some settings (database, etc ...). You can validate all the default, we'll take care of this later.

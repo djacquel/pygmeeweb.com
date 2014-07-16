@@ -26,13 +26,11 @@ In **composer.json** file add :
 [...]
     "require": {
         [...],
-
         "doctrine/data-fixtures": "1.0.*@dev",
         "doctrine/doctrine-fixtures-bundle": "dev-master",
-        "phpunit/phpunit": "~3.7",
-        "behat/symfony2-extension": "1.1.*@dev",
-        "behat/mink-extension": "1.3.*@dev",
-        "behat/mink-browserkit-driver": "1.1.*@dev",
+        "behat/symfony2-extension": "*",
+        "behat/mink-extension": "*",
+        "behat/mink-browserkit-driver": "*",
         "vipsoft/doctrine-data-fixtures-extension": "*"
     },
 [...]
@@ -88,7 +86,7 @@ bin/behat --init "@MyBDDBundle"
 
 ### Configure Behat
 
-Create a **behat.yml** file a you site root.
+Create a **behat.yml** file at your site root.
 
 {% highlight yaml %}
 # behat.yml
@@ -117,10 +115,6 @@ default:
 ## Create your first feature test
 
 In **src/My/BDDBundle/Features/** create a file named **01-symfony-install.feature**. [More about features on behat.org][More about features on behat.org].
-
-{% highlight bash %}
-touch src/My/BDDBundle/Features/01-symfony-install.feature
-{% endhighlight %}
 
 {% highlight yaml %}
 # src/My/BDDBundle/Features/01-symfony-install.feature
