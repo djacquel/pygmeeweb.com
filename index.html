@@ -10,6 +10,7 @@ title: Home
     </div>
 
     <h1>Last Posts</h1>
+
     <dl class="clearfix">{% for post in site.posts limit: site.recent_posts %}
         <dt>{% include _myDate.html param=post.date %}</dt>
         <dd class="clearfix">
