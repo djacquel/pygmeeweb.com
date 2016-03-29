@@ -1,9 +1,13 @@
+
+url: http://pygmeeweb.com
+language: en
+
+
 name: Pygmeeweb
-markdown: redcarpet
-redcarpet:
-    extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "with_toc_data"]
-highlighter: true
-relative_permalinks: false
+markdown: kramdown
+
+kramdown:
+  input: GFM
 
 recent_posts: 50      # Posts on home page
 
@@ -13,5 +17,4 @@ exclude:
   - Gemfile.lock
   - Rakefile
 
-url: http://pygmeeweb.com
 disqus_shortname: pygmeeweb
