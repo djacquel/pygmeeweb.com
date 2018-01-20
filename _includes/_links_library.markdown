@@ -54,7 +54,7 @@ this is the include tag. just remove the **remove**
 [jekyll]: http://jekyllrb.com/
 [leonard]: http://leonard.io/blog/2012/05/installing-ruby-1-9-3-on-ubuntu-12-04-precise-pengolin/
 
-[ghpages]: http://pages.github.com/
+[ghpages]: https://pages.github.com/
 [ghpagesdoc]: https://help.github.com/categories/20/articles
 
 [Symfony]: http://symfony.com/
