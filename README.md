@@ -14,7 +14,7 @@ That's why I switched from Symfony/php driven to Jekyll.
 ## How this blog is done
 
 I use [Jekyll](https://jekyllrb.com) and some salt and pepper from all over the web.
-It was formerly running on [Github pages](https://pages.github.com/) but I now largely prefer [Netlify](https://www.netlify.com) which offers alot more functionalities.
+It was formerly running on [Github pages](https://pages.github.com/) but I now largely prefer [Netlify](https://www.netlify.com) which offers a lot more functionalities.
 
 Released under MIT license.
 Copyright 2013-2018 David Jacquel
