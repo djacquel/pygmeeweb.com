@@ -1,7 +1,7 @@
 Pygmeeweb blog
 ==================
 
-Blog's URL is http://pygmeeweb.com/
+Blog's URL is https://pygmeeweb.com/
 
 # A complete rewrite is on is way. Stay tuned !
 
