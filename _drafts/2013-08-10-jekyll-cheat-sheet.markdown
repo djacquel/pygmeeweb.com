@@ -24,6 +24,6 @@ jekyll build --source _source --destination _deploy
 jekyll build --config _config.yml,_config-dev.yml --drafts
 {% endhighlight %}
 
-[Jekyll]:    http://jekyllrb.com
-[Jekyll bootstrap]: http://jekyllbootstrap.com/
+[Jekyll]:    https://jekyllrb.com
+[Jekyll bootstrap]: https://jekyllbootstrap.com/
 [Jekyll bootstrap rakefile]: https://github.com/plusjade/jekyll-bootstrap/blob/master/Rakefile

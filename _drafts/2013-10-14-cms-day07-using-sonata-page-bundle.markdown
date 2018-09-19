@@ -70,7 +70,7 @@ This cannot be made
 
 Create a template page, that will declare default block for pages.
 
- - Go to [Page list](http://tuto.dev/app_dev.php/admin/sonata/page/page/list) and click on **Add new**.
+ - Go to [Page list](https://tuto.dev/app_dev.php/admin/sonata/page/page/list) and click on **Add new**.
  - Fill **name = global** and tick **enabled** then press **Create**
  - Click on **Block list** in the left menu, then "add new".
  - in the block types list choose **sonata.page.block.container**

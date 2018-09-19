@@ -43,7 +43,7 @@ this is the include tag. just remove the **remove**
 [cms6]: {% post_url 2013-10-14-cms-day06-data-fixtures%}
 
 
-[tuto.dev]: http://tuto.dev
+[tuto.dev]: https://tuto.dev
 
 [prey]: https://preyproject.com/
 [preySignup]: https://panel.preyproject.com/signup
@@ -51,42 +51,42 @@ this is the include tag. just remove the **remove**
 [preyPanel]: https://panel.preyproject.com/app
 
 <!--- ++++++++++++++++++++++ EXTERNAL PAGES ++++++++++++++++++++++ --->
-[jekyll]: http://jekyllrb.com/
-[leonard]: http://leonard.io/blog/2012/05/installing-ruby-1-9-3-on-ubuntu-12-04-precise-pengolin/
+[jekyll]: https://jekyllrb.com/
+[leonard]: https://leonard.io/blog/2012/05/installing-ruby-1-9-3-on-ubuntu-12-04-precise-pengolin/
 
 [ghpages]: https://pages.github.com/
 [ghpagesdoc]: https://help.github.com/categories/20/articles
 
-[Symfony]: http://symfony.com/
-[Symfony2Doc]: http://symfony.com/doc/current/
-[Symfony download]: http://symfony.com/download
-[SymfonyDoc]: http://symfony.com/doc/current/index.html
-[Symfony file permissions]: http://symfony.com/doc/current/book/installation.html#configuration-and-setup
+[Symfony]: https://symfony.com/
+[Symfony2Doc]: https://symfony.com/doc/current/
+[Symfony download]: https://symfony.com/download
+[SymfonyDoc]: https://symfony.com/doc/current/index.html
+[Symfony file permissions]: https://symfony.com/doc/current/book/installation.html#configuration-and-setup
 
-[symfonyCMF]: http://cmf.symfony.com/
-[Jobeet2]: http://www.ens.ro/2012/03/21/jobeet-tutorial-with-symfony2/
+[symfonyCMF]: https://cmf.symfony.com/
+[Jobeet2]: https://www.ens.ro/2012/03/21/jobeet-tutorial-with-symfony2/
 
-[Doctrine fixtures Bundle]: http://symfony.com/doc/current/bundles/DoctrineFixturesBundle/
+[Doctrine fixtures Bundle]: https://symfony.com/doc/current/bundles/DoctrineFixturesBundle/
 
-[Behat]: http://behat.org/
-[read behat doc]: http://docs.behat.org
-[More about features on behat.org]: http://docs.behat.org/quick_intro.html#more-about-features
-[steps documentation on behat.org]: http://docs.behat.org/quick_intro.html#more-about-steps
-[Behat symfony extension]: http://extensions.behat.org/symfony2/
-[Behat Fixtures extension]: http://extensions.behat.org/doctrine-data-fixtures/
-[Mink extension]: http://extensions.behat.org/mink/
+[Behat]: https://behat.org/
+[read behat doc]: https://docs.behat.org
+[More about features on behat.org]: https://docs.behat.org/quick_intro.html#more-about-features
+[steps documentation on behat.org]: https://docs.behat.org/quick_intro.html#more-about-steps
+[Behat symfony extension]: https://extensions.behat.org/symfony2/
+[Behat Fixtures extension]: https://extensions.behat.org/doctrine-data-fixtures/
+[Mink extension]: https://extensions.behat.org/mink/
 
 [phpunit]: https://github.com/sebastianbergmann/phpunit/
 
-[diem]: http://diem-project.org/
+[diem]: https://diem-project.org/
 
-[Composer]: http://getcomposer.org/doc/
-[Composercli]: http://getcomposer.org/doc/03-cli.md
-[ComposerGlobal]: http://getcomposer.org/doc/00-intro.md#globally
+[Composer]: https://getcomposer.org/doc/
+[Composercli]: https://getcomposer.org/doc/03-cli.md
+[ComposerGlobal]: https://getcomposer.org/doc/00-intro.md#globally
 
 [Packagist]: https://packagist.org/
 
 [gitflow]: https://github.com/nvie/gitflow
 
 
-[Espelette pepper]: http://en.wikipedia.org/wiki/Espelette_pepper
+[Espelette pepper]: https://en.wikipedia.org/wiki/Espelette_pepper

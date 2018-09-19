@@ -40,7 +40,7 @@ pkill virtualbox-4.2
 
 Install virtualbox-4.3 and dkms through synaptic
 
-[vagrant]: http://www.vagrantup.com/
+[vagrant]: https://www.vagrantup.com/
 
 Go to [Vagrant download page][http://www.vagrantup.com/downloads.html]
 

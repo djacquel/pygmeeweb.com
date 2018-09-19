@@ -21,4 +21,4 @@ But the composer.json is itself part of you main forked repository and it is ver
 
 
 ## References
-Stack overflow question [Contributing to open source bundles from vendor directory?](http://stackoverflow.com/questions/13325158/contributing-to-open-source-bundles-from-vendor-directory)
+Stack overflow question [Contributing to open source bundles from vendor directory?](https://stackoverflow.com/questions/13325158/contributing-to-open-source-bundles-from-vendor-directory)
