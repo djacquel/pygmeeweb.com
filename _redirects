@@ -1,0 +1,2 @@
+# Redirect default Netlify subdomain to primary domain
+https://pygmeeweb.netlify.com/* https://pygmeeweb.com/:splat 301!
