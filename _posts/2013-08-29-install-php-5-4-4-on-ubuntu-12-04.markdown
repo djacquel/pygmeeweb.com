@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Install PHP 5.5.4 on Ubuntu 12.04"
 comments: true
 ---

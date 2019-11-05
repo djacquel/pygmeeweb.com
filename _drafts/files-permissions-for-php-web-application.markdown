@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Files permissions for a PHP web application"
 ---
 

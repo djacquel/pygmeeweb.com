@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Symfony 2   a CMS list"
 description: ""
 category:

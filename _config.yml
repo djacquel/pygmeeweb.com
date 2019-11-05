@@ -1,7 +1,9 @@
 
+title: Pygmeeweb
+description:
+
 url: https://pygmeeweb.com
 language: en
-
 
 name: Pygmeeweb
 markdown: kramdown
@@ -9,12 +11,21 @@ markdown: kramdown
 kramdown:
   input: GFM
 
-recent_posts: 50      # Posts on home page
-
 exclude:
   - README.md
   - Gemfile
   - Gemfile.lock
   - Rakefile
 
+defaults:
+  -
+    scope:
+      type: "posts"
+    values:
+      permalink: "/news/:title/"
+      layout: "post"
+
 disqus_shortname: pygmeeweb
+
+recent_posts: 50  # Posts on home page
+

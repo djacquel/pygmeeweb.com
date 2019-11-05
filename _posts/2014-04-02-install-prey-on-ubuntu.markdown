@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Install Prey on Ubuntu"
 
 published: true

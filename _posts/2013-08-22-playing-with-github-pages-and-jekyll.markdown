@@ -1,5 +1,4 @@
 ---
-layout: post
 title:  "Playing with Github pages and Jekyll"
 comments: true
 ---

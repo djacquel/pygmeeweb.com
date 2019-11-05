@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Install latest VirtualBox and Vagrant on Ubuntu 12.04"
 description: ""
 category:

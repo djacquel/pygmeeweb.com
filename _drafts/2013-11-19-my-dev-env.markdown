@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "my dev env"
 description: ""
 category:

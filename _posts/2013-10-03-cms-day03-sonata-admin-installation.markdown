@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Symfony CMS - day 03 - Sonata Admin Installation"
 comments: true
 ---

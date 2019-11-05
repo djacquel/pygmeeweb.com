@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Symfony CMS - day 06 - Data Fixtures"
 
 published: true

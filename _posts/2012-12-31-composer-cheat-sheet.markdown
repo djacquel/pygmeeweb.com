@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Composer cheat sheet"
 comments: false
 ---

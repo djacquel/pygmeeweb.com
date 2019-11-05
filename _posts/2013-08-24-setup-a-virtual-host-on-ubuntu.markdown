@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Setup a virtual host on Ubuntu"
 comments: true
 ---

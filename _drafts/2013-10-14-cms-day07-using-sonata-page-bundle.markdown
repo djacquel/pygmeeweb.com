@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Symfony CMS - day 07 - Using Sonata Page Bundle"
 published: true
 comments: true

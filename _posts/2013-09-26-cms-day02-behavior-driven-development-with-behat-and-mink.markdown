@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Symfony CMS - day 02 - Behavior Driven Development (BDD) with Behat and Mink"
 comments: true
 ---

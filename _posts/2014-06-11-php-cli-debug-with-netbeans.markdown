@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "PHP cli debug with netbeans"
 description: ""
 category:

@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Symfony CMS - day 01 - Symfony installation"
 comments: true
 ---

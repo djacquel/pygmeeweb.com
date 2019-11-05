@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Git, the gitflow way"
 comments: true
 ---

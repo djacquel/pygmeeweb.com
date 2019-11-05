@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Contributing on a forked Symfony project but also on vendors"
 description: ""
 category:

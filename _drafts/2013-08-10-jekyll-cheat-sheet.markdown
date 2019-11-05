@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Jekyll cheat sheet"
 description: "Here a description"
 category:
